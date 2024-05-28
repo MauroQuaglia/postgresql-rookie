@@ -1,0 +1,22 @@
+class Configurator
+
+  def self.call(machines)
+    Vagrant.configure("2") do |config|
+      config.vm.box = "debian/bullseye64"
+      config.ssh.verify_host_key = false
+
+      machines.each do |vagrant|
+        config.vm.define(vagrant[:name]) do |current|
+          current.vm.network('forwarded_port', id: 'ssh', guest: 22, host: vagrant[:port], auto_correct: false)
+          current.vm.hostname = vagrant[:name]
+
+          current.vm.provision('ansible') do |ansible|
+            ansible.compatibility_mode = '1.8'
+            ansible.playbook = "../sysadmin_setup.yml"
+          end
+        end
+      end
+    end
+  end
+
+end

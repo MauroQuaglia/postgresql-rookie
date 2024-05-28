@@ -1,0 +1,102 @@
+---
+- name: "Install base packages"
+  apt:
+    name: "{{ item }}"
+    update_cache: true
+  loop:
+    - "gnupg2"
+
+- name: "Install apt key"
+  apt_key:
+    url: "https://www.postgresql.org/media/keys/ACCC4CF8.asc"
+
+- name: "Add apt repository"
+  apt_repository:
+    repo: "deb http://apt.postgresql.org/pub/repos/apt/{{ansible_distribution_release}}-pgdg main"
+    filename: 'pgdg'
+
+
+
+
+
+- name: Install Postgres and utils
+  apt:
+    name: "{{ packages }}"
+    update_cache: yes
+    state: latest
+  vars:
+    packages:
+      - postgresql-{{postgres_version}}
+      - postgresql-client-{{postgres_version}}
+      - libpq5
+      - libssl-dev
+      - libpq-dev
+      - python3-psycopg2
+
+- name: Insert project_user commands in sudoers
+  blockinfile:
+    destfile: /etc/sudoers.d/postgres
+    block: |
+      {{ project_user }} ALL= NOPASSWD: /bin/systemctl reload postgresql
+      {{ project_user }} ALL= NOPASSWD: /usr/bin/pg_restore
+    create: yes
+    owner: root
+    group: root
+    mode: 0750
+    validate: '/usr/sbin/visudo -cf %s'
+
+- name: Comment peer auth for local connections in postgres 1
+  replace:
+    dest: /etc/postgresql/{{postgres_version}}/main/pg_hba.conf
+    regexp: '^local   all             postgres                                peer'
+    replace: '#local   all             postgres                                peer'
+  notify: restart postgres
+
+- name: Comment peer auth for local connections in postgres 2
+  replace:
+    dest: /etc/postgresql/{{postgres_version}}/main/pg_hba.conf
+    regexp: '^local   all             all                                     peer'
+    replace: '#local   all             all                                     peer'
+  notify: restart postgres
+
+- name: Comment peer auth for local connections in postgres 3
+  replace:
+    dest: /etc/postgresql/{{postgres_version}}/main/pg_hba.conf
+    regexp: '^host    all             all             127.0.0.1/32            md5'
+    replace: '#host    all             all             127.0.0.1/32            md5'
+  notify: restart postgres
+
+- name: Comment peer auth for local connections in postgres 4
+  replace:
+    dest: /etc/postgresql/{{postgres_version}}/main/pg_hba.conf
+    regexp: '^host    all             all             ::1/128                 md5'
+    replace: '#host    all             all             ::1/128                 md5'
+  notify: restart postgres
+
+- name: Modify pg_hba.conf for local connections
+  blockinfile:
+    destfile: /etc/postgresql/{{postgres_version}}/main/pg_hba.conf
+    marker: "# {mark} ANSIBLE MANAGED BLOCK local ips"
+    block: |
+      local   all         all                               trust
+      host    all         all         127.0.0.1/32          trust
+      host    all         all         ::1/128               trust
+  notify: restart postgres
+
+- name: Modify pg_hba.conf for lan connections
+  lineinfile:
+    dest: /etc/postgresql/{{postgres_version}}/main/pg_hba.conf
+    line: "host    all         all         {{ item }}            trust"
+  with_items:
+    - "{{ trusted_ips }}"
+  notify: restart postgres
+
+- name: Enable postgres to accept connections from all
+  replace:
+    dest: /etc/postgresql/{{postgres_version}}/main/postgresql.conf
+    regexp: "^#?listen_addresses = 'localhost'.*"
+    replace: "listen_addresses = '*'          # what IP address(es) to listen on;"
+  notify: restart postgres
+
+- meta: flush_handlers
+
