@@ -1,0 +1,14 @@
+---
+- name: "Sysadmin Setup"
+  hosts: all
+  gather_facts: true
+  become: true
+
+  tasks:
+    - name: "Update and upgrade apt packages"
+      apt:
+        update_cache: true
+        upgrade: true
+        autoremove: true
+        purge: true
+...
