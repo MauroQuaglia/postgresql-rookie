@@ -1,24 +1,4 @@
 ---
-- name: "Install base packages"
-  apt:
-    name: "{{ item }}"
-    update_cache: true
-  loop:
-    - "gnupg2"
-
-- name: "Install apt key"
-  apt_key:
-    url: "https://www.postgresql.org/media/keys/ACCC4CF8.asc"
-
-- name: "Add apt repository"
-  apt_repository:
-    repo: "deb http://apt.postgresql.org/pub/repos/apt/{{ansible_distribution_release}}-pgdg main"
-    filename: 'pgdg'
-
-
-
-
-
 - name: Install Postgres and utils
   apt:
     name: "{{ packages }}"

@@ -1,2 +1,3 @@
 # postgresql-rookie
-Study of PostgreSQL
+* Comandi utili:
+  * `sudo systemctl status postgresql`
