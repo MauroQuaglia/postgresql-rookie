@@ -5,26 +5,6 @@
     name:
       - "gpg"
 
-- name: "Install apt key"
-  apt_key:
-    url: "https://www.postgresql.org/media/keys/ACCC4CF8.asc"
-
-- name: "Add apt repository"
-  apt_repository:
-    repo: "deb http://apt.postgresql.org/pub/repos/apt/ {{ansible_distribution_release}}-pgdg main"
-    filename: 'pgdg'
-
-- name: "Install PostgreSQL"
-  apt:
-    update_cache: true
-    name:
-      - "postgresql-{{postgres_version}}"
-
-- name: "Restart PostgresSQL"
-  service:
-    name: "postgresql"
-    state: "restarted"
-
 - name: "Collect LC_CTYPE"
   shell: "locale | grep LC_CTYPE"
   register: lc_ctype
@@ -44,4 +24,24 @@
     that: lc_collate.stdout == 'LC_COLLATE="{{ postgres_lc_collate }}"'
     fail_msg: "LC_COLLATE is not {{ postgres_lc_collate }}"
     success_msg: "LC_COLLATE is {{ postgres_lc_collate }}"
+
+- name: "Install apt key"
+  apt_key:
+    url: "https://www.postgresql.org/media/keys/ACCC4CF8.asc"
+
+- name: "Add apt repository"
+  apt_repository:
+    repo: "deb http://apt.postgresql.org/pub/repos/apt/ {{ansible_distribution_release}}-pgdg main"
+    filename: 'pgdg'
+
+- name: "Install PostgreSQL"
+  apt:
+    update_cache: true
+    name:
+      - "postgresql-{{postgres_version}}"
+
+- name: "Restart PostgresSQL"
+  service:
+    name: "postgresql"
+    state: "restarted"
 ...
