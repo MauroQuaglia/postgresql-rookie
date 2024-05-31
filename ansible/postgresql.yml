@@ -5,5 +5,9 @@
   become: true
 
   roles:
-    - { role: 'postgres', postgres_version: '10' }
+    - { role: 'postgres',
+        postgres_version: '10',
+        postgres_lc_ctype: "C.UTF-8",
+        postgres_lc_collate: "C.UTF-8"
+    }
 ...
