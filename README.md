@@ -21,6 +21,16 @@
   * `sudo -u postgres psql`
 ----
 * Esempio:
+  * `sudo -u postgres psql`
+  * `\l`
   * CREATE DATABASE test;
-  * CREATE TABLE courses(c_no text PRIMARY KEY, title text, hours integer);
-  * INSERT INTO courses(c_no, title, hours) VALUES ('CS301', 'Databases', 30), ('CS305', 'Networks', 60); 
+  * `\c test`
+  * `test=#` CREATE TABLE courses(c_no text PRIMARY KEY, title text, hours integer);
+  * `test=#` INSERT INTO courses(c_no, title, hours) VALUES ('CS301', 'Databases', 30), ('CS305', 'Networks', 60); 
+----
+* DBeaver
+ * Creo Database come sopra
+ * Cambio il file `postgresql.conf` specificando `listen_addresses = '*'`
+ * Cambio `pg_hba.conf` mettendo all'ultima riga: `host    all             all             0.0.0.0/0               trust`
+ * `sudo systemctl restart postgresql`
+ * Poi apro DBeaver e provo a connettermi.
