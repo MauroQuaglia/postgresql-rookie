@@ -38,10 +38,31 @@
   apt:
     update_cache: true
     name:
-      - "postgresql-{{postgres_version}}"
+      - "postgresql-{{ postgres_version }}"
 
-- name: "Restart PostgresSQL"
+- name: "Copy pg_hba.conf file"
+  copy:
+    src: "pg_hba.conf"
+    dest: "/etc/postgresql/{{ postgres_version }}/main"
+    owner: "postgres"
+    group: "postgres"
+    mode: "0640"
+
+- name: "Copy postgresql.conf file"
+  copy:
+    src: "postgresql.conf"
+    dest: "/etc/postgresql/{{ postgres_version }}/main"
+    owner: "postgres"
+    group: "postgres"
+    mode: "0644"
+
+- name: "Stop PostgresSQL"
   service:
     name: "postgresql"
-    state: "restarted"
+    state: "stopped"
+
+- name: "Start PostgresSQL"
+  service:
+    name: "postgresql"
+    state: "started"
 ...
