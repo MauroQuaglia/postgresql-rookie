@@ -3,7 +3,7 @@
   apt:
     update_cache: true
     name:
-      - "gpg"
+      - "gnupg2"
 
 - name: "Collect LC_CTYPE"
   shell: "locale | grep LC_CTYPE"
@@ -42,7 +42,7 @@
 
 - name: "Copy pg_hba.conf file"
   copy:
-    src: "pg_hba.conf"
+    src: "customs/v{{ postgres_version }}/pg_hba.conf"
     dest: "/etc/postgresql/{{ postgres_version }}/main"
     owner: "postgres"
     group: "postgres"
@@ -50,7 +50,7 @@
 
 - name: "Copy postgresql.conf file"
   copy:
-    src: "postgresql.conf"
+    src: "customs/v{{ postgres_version }}/postgresql.conf"
     dest: "/etc/postgresql/{{ postgres_version }}/main"
     owner: "postgres"
     group: "postgres"
