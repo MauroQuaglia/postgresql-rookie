@@ -34,10 +34,10 @@ scp -i /home/xpuser/mauro-quaglia/postgresql-rookie/ansible/.vagrant/machines/pg
 # Esempio:
   * `sudo -u postgres psql`
   * `\l`
-  * CREATE DATABASE test;
-  * `\c test`
-  * `test=#` CREATE TABLE courses(c_no text PRIMARY KEY, title text, hours integer);
-  * `test=#` INSERT INTO courses(c_no, title, hours) VALUES ('CS301', 'Databases', 30), ('CS305', 'Networks', 60); 
+  * CREATE DATABASE school;
+  * `\c school`
+  * `school=#` CREATE TABLE courses(c_no text PRIMARY KEY, title text, hours integer);
+  * `school=#` INSERT INTO courses(c_no, title, hours) VALUES ('CS301', 'Databases', 30), ('CS305', 'Networks', 60); 
 ----
 # DBeaver
  * Creo Database come sopra (Se non ho il Database non mi connetto a niente e non funziona da DBeaver)
@@ -45,3 +45,5 @@ scp -i /home/xpuser/mauro-quaglia/postgresql-rookie/ansible/.vagrant/machines/pg
  * Cambio `pg_hba.conf` mettendo all'ultima riga: `host    all             all             0.0.0.0/0               trust`
  * `sudo systemctl restart postgresql`
  * Poi apro DBeaver e provo a connettermi.
+# Dump
+* Come Local client scegliere: `/usr/lib/postgresql/11`

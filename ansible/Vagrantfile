@@ -6,10 +6,12 @@ Vagrant.configure("2") do |config|
     current.vm.network('forwarded_port', id: 'postgresql', guest: 5432, host: 2345, auto_correct: false)
     current.vm.hostname = 'pg-vagrant'
 
+=begin
     current.vm.provision('ansible') do |ansible|
       ansible.compatibility_mode = '1.8'
       ansible.playbook = "setup.yml"
     end
+=end
 
     current.vm.provision('ansible') do |ansible|
       ansible.compatibility_mode = '1.8'
