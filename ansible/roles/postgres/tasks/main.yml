@@ -47,6 +47,7 @@
     owner: "postgres"
     group: "postgres"
     mode: "0640"
+  when: postgres_custom_config
 
 - name: "Copy postgresql.conf file"
   copy:
@@ -55,6 +56,7 @@
     owner: "postgres"
     group: "postgres"
     mode: "0644"
+  when: postgres_custom_config
 
 - name: "Stop PostgresSQL"
   service:

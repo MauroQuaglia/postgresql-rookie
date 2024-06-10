@@ -6,9 +6,9 @@
 
   roles:
     - { role: 'postgres',
-        become: true,
         postgres_version: '10',
         postgres_lc_ctype: "C.UTF-8",
-        postgres_lc_collate: "C.UTF-8"
+        postgres_lc_collate: "C.UTF-8",
+        postgres_custom_config: true
     }
 ...
