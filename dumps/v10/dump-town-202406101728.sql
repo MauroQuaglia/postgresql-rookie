@@ -109,6 +109,21 @@ CREATE TABLE school.students (
 ALTER TABLE school.students OWNER TO postgres;
 
 --
+-- Name: students_courses; Type: VIEW; Schema: school; Owner: postgres
+--
+
+CREATE VIEW school.students_courses AS
+ SELECT students.name AS student_name,
+    courses.title AS course_title,
+    exams.score AS student_score
+   FROM ((school.exams
+     JOIN school.students ON ((students.student_id = exams.student_id)))
+     JOIN school.courses ON ((courses.course_id = exams.course_id)));
+
+
+ALTER TABLE school.students_courses OWNER TO postgres;
+
+--
 -- Data for Name: courses; Type: TABLE DATA; Schema: school; Owner: postgres
 --
 
