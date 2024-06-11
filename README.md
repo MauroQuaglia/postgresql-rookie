@@ -31,58 +31,6 @@ scp -i /home/xpuser/mauro-quaglia/postgresql-rookie/ansible/.vagrant/machines/pg
 * `psql`:
   * `sudo -u postgres psql`
 ----
-# Esempio:
-* `sudo -u postgres psql`
-* `\l`
-```
-CREATE DATABASE town;
-\c town
-
-CREATE SCHEMA library;
-CREATE sCHEMA police;
-CREATE SCHEMA school;
-
-CREATE TABLE school.courses(
-course_id text PRIMARY KEY,
-title text,
-hours integer
-);
-INSERT INTO school.courses VALUES ('CS3000', 'Docker', 60);
-
-CREATE TABLE school.students(
-student_id integer PRIMARY KEY,
-name text,
-start_year integer
-);
-INSERT INTO school.students VALUES (13, 'Anna', 2021);
-
-CREATE TABLE school.exams(
-student_id integer REFERENCES school.students(student_id),
-course_id text REFERENCES school.courses(course_id),
-score integer,
-CONSTRAINT pk PRIMARY KEY(student_id, course_id)
-);
-INSERT INTO school.exams VALUES (13, 'CS3000', 80);
-
-SELECT schema_name FROM information_schema.schemata;
-```
-----
-* Per esempio per creare una view:
-```
-  CREATE VIEW school.students_courses AS
-  SELECT
-  school.students.name AS student_name,
-  school.courses.title AS course_title,
-  school.exams.score as student_score
-  FROM
-  school.exams
-  JOIN
-  school.students ON school.students.student_id = school.exams.student_id
-  JOIN
-  school.courses ON school.courses.course_id = school.exams.course_id;
-```
-----
-
 # DBeaver
  * Creo Database come sopra (Se non ho il Database non mi connetto a niente e non funziona da DBeaver)
  * Cambio il file `postgresql.conf` specificando `listen_addresses = '*'`
