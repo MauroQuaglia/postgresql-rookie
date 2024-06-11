@@ -68,3 +68,8 @@ $function$
 ;
 ```
 * Se poi faccio una query: `select mq_trim('   aaa   ');`
+----
+# Connettersi a un file
+* Esempio (configurare postgres per loggare su un CSV e poi vederlo come tabella)
+* https://www.postgresql.org/docs/current/runtime-config-logging.html#RUNTIME-CONFIG-LOGGING-CSVLOG
+* https://www.postgresql.org/docs/current/file-fdw.html
