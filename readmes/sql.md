@@ -81,3 +81,35 @@ CREATE FOREIGN TABLE school.teachers (course_id TEXT, name TEXT, notes TEXT)
 SERVER file_server
 OPTIONS (filename '/var/lib/postgresql/10/main/teachers.csv', format 'csv', header 'true');
 ```
+----
+# Esempio di creazione di una vista materializzata
+```
+CREATE MATERIALIZED VIEW school.teachers_courses AS
+select
+school.courses.course_id AS course_id,
+school.courses.title AS course_title,
+school.teachers.name AS teacher_name,
+school.teachers.notes AS teacher_notes
+FROM
+school.courses
+JOIN
+school.teachers ON school.courses.course_id = school.teachers.course_id;
+```
+----
+# Esempio di una creazione di un trigger:
+```
+# Si definisce una funzione
+CREATE OR REPLACE FUNCTION refresh_teachers_courses()
+RETURNS trigger AS $$
+BEGIN
+REFRESH MATERIALIZED VIEW school.teachers_courses;
+RETURN NULL;  -- I trigger AFTER non devono restituire nulla
+END;
+$$ LANGUAGE plpgsql;
+
+# ...e la si associa a un trigger.
+CREATE TRIGGER refresh_teachers_courses_trigger
+AFTER INSERT OR UPDATE OR DELETE ON school.courses
+FOR EACH STATEMENT
+EXECUTE PROCEDURE refresh_teachers_courses();
+```

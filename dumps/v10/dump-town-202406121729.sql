@@ -65,6 +65,74 @@ CREATE SCHEMA school;
 
 ALTER SCHEMA school OWNER TO postgres;
 
+--
+-- Name: file_fdw; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS file_fdw WITH SCHEMA school;
+
+
+--
+-- Name: EXTENSION file_fdw; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION file_fdw IS 'foreign-data wrapper for flat file access';
+
+
+--
+-- Name: unaccent; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS unaccent WITH SCHEMA school;
+
+
+--
+-- Name: EXTENSION unaccent; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION unaccent IS 'text search dictionary that removes accents';
+
+
+--
+-- Name: mq_trim(text); Type: FUNCTION; Schema: school; Owner: postgres
+--
+
+CREATE FUNCTION school.mq_trim(input_string text) RETURNS text
+    LANGUAGE plpgsql
+    AS $$
+BEGIN
+    RETURN TRIM(BOTH FROM input_string);
+END;
+$$;
+
+
+ALTER FUNCTION school.mq_trim(input_string text) OWNER TO postgres;
+
+--
+-- Name: refresh_teachers_courses(); Type: FUNCTION; Schema: school; Owner: postgres
+--
+
+CREATE FUNCTION school.refresh_teachers_courses() RETURNS trigger
+    LANGUAGE plpgsql
+    AS $$
+BEGIN
+    REFRESH MATERIALIZED VIEW teachers_courses;
+    RETURN NULL;
+END;
+$$;
+
+
+ALTER FUNCTION school.refresh_teachers_courses() OWNER TO postgres;
+
+--
+-- Name: file_server; Type: SERVER; Schema: -; Owner: postgres
+--
+
+CREATE SERVER file_server FOREIGN DATA WRAPPER file_fdw;
+
+
+ALTER SERVER file_server OWNER TO postgres;
+
 SET default_tablespace = '';
 
 SET default_with_oids = false;
@@ -124,11 +192,48 @@ CREATE VIEW school.students_courses AS
 ALTER TABLE school.students_courses OWNER TO postgres;
 
 --
+-- Name: teachers; Type: FOREIGN TABLE; Schema: school; Owner: postgres
+--
+
+CREATE FOREIGN TABLE school.teachers (
+    course_id text,
+    name text,
+    notes text
+)
+SERVER file_server
+OPTIONS (
+    filename '/var/lib/postgresql/10/main/teachers.csv',
+    format 'csv',
+    header 'true'
+);
+
+
+ALTER FOREIGN TABLE school.teachers OWNER TO postgres;
+
+--
+-- Name: teachers_courses; Type: MATERIALIZED VIEW; Schema: school; Owner: postgres
+--
+
+CREATE MATERIALIZED VIEW school.teachers_courses AS
+ SELECT courses.course_id,
+    courses.title AS course_title,
+    teachers.name AS teacher_name,
+    teachers.notes AS teacher_notes
+   FROM (school.courses
+     JOIN school.teachers ON ((courses.course_id = teachers.course_id)))
+  WITH NO DATA;
+
+
+ALTER TABLE school.teachers_courses OWNER TO postgres;
+
+--
 -- Data for Name: courses; Type: TABLE DATA; Schema: school; Owner: postgres
 --
 
 COPY school.courses (course_id, title, hours) FROM stdin;
 CS3000	Docker	60
+DX9000	JavaScript	100
+Z101	Reti	10
 \.
 
 
@@ -138,6 +243,7 @@ CS3000	Docker	60
 
 COPY school.exams (student_id, course_id, score) FROM stdin;
 13	CS3000	80
+14	DX9000	18
 \.
 
 
@@ -147,6 +253,8 @@ COPY school.exams (student_id, course_id, score) FROM stdin;
 
 COPY school.students (student_id, name, start_year) FROM stdin;
 13	Anna	2021
+14	Adèlchi	2000
+15	Benedetto	1999
 \.
 
 
@@ -175,6 +283,13 @@ ALTER TABLE ONLY school.students
 
 
 --
+-- Name: courses refresh_teachers_courses_trigger; Type: TRIGGER; Schema: school; Owner: postgres
+--
+
+CREATE TRIGGER refresh_teachers_courses_trigger AFTER INSERT OR DELETE OR UPDATE ON school.courses FOR EACH STATEMENT EXECUTE PROCEDURE school.refresh_teachers_courses();
+
+
+--
 -- Name: exams exams_course_id_fkey; Type: FK CONSTRAINT; Schema: school; Owner: postgres
 --
 
@@ -188,6 +303,13 @@ ALTER TABLE ONLY school.exams
 
 ALTER TABLE ONLY school.exams
     ADD CONSTRAINT exams_student_id_fkey FOREIGN KEY (student_id) REFERENCES school.students(student_id);
+
+
+--
+-- Name: teachers_courses; Type: MATERIALIZED VIEW DATA; Schema: school; Owner: postgres
+--
+
+REFRESH MATERIALIZED VIEW school.teachers_courses;
 
 
 --

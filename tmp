@@ -1,11 +1,2 @@
-CREATE VIEW school.students_courses AS
-SELECT
-  school.students.name AS student_name,
-  school.courses.title AS course_title,
-  school.exams.score as student_score
-FROM
-  school.exams
-JOIN
-  school.students ON school.students.student_id = school.exams.student_id
-JOIN
-  school.courses ON school.courses.course_id = school.exams.course_id;
+* fare materialize view
+* fare tirgger che aggiorna in automatico
