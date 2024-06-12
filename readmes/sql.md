@@ -73,3 +73,11 @@ $function$
 * Esempio (configurare postgres per loggare su un CSV e poi vederlo come tabella)
 * https://www.postgresql.org/docs/current/runtime-config-logging.html#RUNTIME-CONFIG-LOGGING-CSVLOG
 * https://www.postgresql.org/docs/current/file-fdw.html
+* Per una prova semplice:
+```
+CREATE EXTENSION file_fdw;
+CREATE SERVER file_server FOREIGN DATA WRAPPER file_fdw;
+CREATE FOREIGN TABLE school.teachers (course_id TEXT, name TEXT, notes TEXT)
+SERVER file_server
+OPTIONS (filename '/var/lib/postgresql/10/main/teachers.csv', format 'csv', header 'true');
+```
