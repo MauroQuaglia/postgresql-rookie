@@ -58,6 +58,16 @@
     mode: "0644"
   when: postgres_custom_config
 
+- name: "Upload CSV file with data"
+  tags: 'upload_csv'
+  copy:
+    src: "teachers.csv"
+    dest: "/var/lib/postgresql/{{ postgres_version }}/main"
+    owner: "postgres"
+    group: "postgres"
+    mode: "0644"
+  when: postgres_upload_csv
+
 - name: "Stop PostgresSQL"
   service:
     name: "postgresql"
