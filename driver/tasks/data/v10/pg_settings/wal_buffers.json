@@ -1,0 +1,19 @@
+{
+  "name": "wal_buffers",
+  "setting": "512",
+  "unit": "8kB",
+  "category": "Write-Ahead Log / Settings",
+  "short_desc": "Sets the number of disk-page buffers in shared memory for WAL.",
+  "extra_desc": null,
+  "context": "postmaster",
+  "vartype": "integer",
+  "source": "override",
+  "min_val": "-1",
+  "max_val": "262143",
+  "enumvals": null,
+  "boot_val": "-1",
+  "reset_val": "512",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

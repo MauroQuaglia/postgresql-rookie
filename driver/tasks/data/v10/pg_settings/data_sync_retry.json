@@ -1,0 +1,19 @@
+{
+  "name": "data_sync_retry",
+  "setting": "off",
+  "unit": null,
+  "category": "Error Handling",
+  "short_desc": "Whether to continue running after a failure to sync data files.",
+  "extra_desc": null,
+  "context": "postmaster",
+  "vartype": "bool",
+  "source": "default",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": null,
+  "boot_val": "off",
+  "reset_val": "off",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

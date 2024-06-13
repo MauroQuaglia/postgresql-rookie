@@ -1,0 +1,19 @@
+{
+  "name": "db_user_namespace",
+  "setting": "off",
+  "unit": null,
+  "category": "Connections and Authentication / Security and Authentication",
+  "short_desc": "Enables per-database user names.",
+  "extra_desc": null,
+  "context": "sighup",
+  "vartype": "bool",
+  "source": "default",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": null,
+  "boot_val": "off",
+  "reset_val": "off",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

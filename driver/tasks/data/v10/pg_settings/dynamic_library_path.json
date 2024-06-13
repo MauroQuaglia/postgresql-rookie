@@ -1,0 +1,19 @@
+{
+  "name": "dynamic_library_path",
+  "setting": "$libdir",
+  "unit": null,
+  "category": "Client Connection Defaults / Other Defaults",
+  "short_desc": "Sets the path for dynamically loadable modules.",
+  "extra_desc": "If a dynamically loadable module needs to be opened and the specified name does not have a directory component (i.e., the name does not contain a slash), the system will search this path for the specified file.",
+  "context": "superuser",
+  "vartype": "string",
+  "source": "default",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": null,
+  "boot_val": "$libdir",
+  "reset_val": "$libdir",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

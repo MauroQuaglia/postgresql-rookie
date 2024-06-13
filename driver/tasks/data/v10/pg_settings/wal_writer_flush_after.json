@@ -1,0 +1,19 @@
+{
+  "name": "wal_writer_flush_after",
+  "setting": "128",
+  "unit": "8kB",
+  "category": "Write-Ahead Log / Settings",
+  "short_desc": "Amount of WAL written out by WAL writer that triggers a flush.",
+  "extra_desc": null,
+  "context": "sighup",
+  "vartype": "integer",
+  "source": "default",
+  "min_val": "0",
+  "max_val": "2147483647",
+  "enumvals": null,
+  "boot_val": "128",
+  "reset_val": "128",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

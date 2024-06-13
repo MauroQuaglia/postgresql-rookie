@@ -1,0 +1,19 @@
+{
+  "name": "max_stack_depth",
+  "setting": "2048",
+  "unit": "kB",
+  "category": "Resource Usage / Memory",
+  "short_desc": "Sets the maximum stack depth, in kilobytes.",
+  "extra_desc": null,
+  "context": "superuser",
+  "vartype": "integer",
+  "source": "environment variable",
+  "min_val": "100",
+  "max_val": "2147483647",
+  "enumvals": null,
+  "boot_val": "100",
+  "reset_val": "2048",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

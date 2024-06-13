@@ -1,0 +1,19 @@
+{
+  "name": "track_activities",
+  "setting": "on",
+  "unit": null,
+  "category": "Statistics / Query and Index Statistics Collector",
+  "short_desc": "Collects information about executing commands.",
+  "extra_desc": "Enables the collection of information on the currently executing command of each session, along with the time at which that command began execution.",
+  "context": "superuser",
+  "vartype": "bool",
+  "source": "default",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": null,
+  "boot_val": "on",
+  "reset_val": "on",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

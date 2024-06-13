@@ -1,0 +1,19 @@
+{
+  "name": "ssl_ciphers",
+  "setting": "HIGH:MEDIUM:+3DES:!aNULL",
+  "unit": null,
+  "category": "Connections and Authentication / Security and Authentication",
+  "short_desc": "Sets the list of allowed SSL ciphers.",
+  "extra_desc": null,
+  "context": "sighup",
+  "vartype": "string",
+  "source": "default",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": null,
+  "boot_val": "HIGH:MEDIUM:+3DES:!aNULL",
+  "reset_val": "HIGH:MEDIUM:+3DES:!aNULL",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

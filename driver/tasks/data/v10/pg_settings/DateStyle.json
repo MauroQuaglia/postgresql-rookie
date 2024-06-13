@@ -1,0 +1,19 @@
+{
+  "name": "DateStyle",
+  "setting": "ISO, MDY",
+  "unit": null,
+  "category": "Client Connection Defaults / Locale and Formatting",
+  "short_desc": "Sets the display format for date and time values.",
+  "extra_desc": "Also controls interpretation of ambiguous date inputs.",
+  "context": "user",
+  "vartype": "string",
+  "source": "configuration file",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": null,
+  "boot_val": "ISO, MDY",
+  "reset_val": "ISO, MDY",
+  "sourcefile": "/etc/postgresql/10/main/postgresql.conf",
+  "sourceline": "565",
+  "pending_restart": "f"
+}

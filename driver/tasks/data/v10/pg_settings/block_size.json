@@ -1,0 +1,19 @@
+{
+  "name": "block_size",
+  "setting": "8192",
+  "unit": null,
+  "category": "Preset Options",
+  "short_desc": "Shows the size of a disk block.",
+  "extra_desc": null,
+  "context": "internal",
+  "vartype": "integer",
+  "source": "default",
+  "min_val": "8192",
+  "max_val": "8192",
+  "enumvals": null,
+  "boot_val": "8192",
+  "reset_val": "8192",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

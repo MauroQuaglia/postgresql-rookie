@@ -1,0 +1,19 @@
+{
+  "name": "vacuum_cost_delay",
+  "setting": "0",
+  "unit": "ms",
+  "category": "Resource Usage / Cost-Based Vacuum Delay",
+  "short_desc": "Vacuum cost delay in milliseconds.",
+  "extra_desc": null,
+  "context": "user",
+  "vartype": "integer",
+  "source": "default",
+  "min_val": "0",
+  "max_val": "100",
+  "enumvals": null,
+  "boot_val": "0",
+  "reset_val": "0",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "checkpoint_flush_after",
+  "setting": "32",
+  "unit": "8kB",
+  "category": "Write-Ahead Log / Checkpoints",
+  "short_desc": "Number of pages after which previously performed writes are flushed to disk.",
+  "extra_desc": null,
+  "context": "sighup",
+  "vartype": "integer",
+  "source": "default",
+  "min_val": "0",
+  "max_val": "256",
+  "enumvals": null,
+  "boot_val": "32",
+  "reset_val": "32",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

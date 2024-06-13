@@ -1,0 +1,19 @@
+{
+  "name": "lc_messages",
+  "setting": "C.UTF-8",
+  "unit": null,
+  "category": "Client Connection Defaults / Locale and Formatting",
+  "short_desc": "Sets the language in which messages are displayed.",
+  "extra_desc": null,
+  "context": "superuser",
+  "vartype": "string",
+  "source": "configuration file",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": null,
+  "boot_val": "",
+  "reset_val": "C.UTF-8",
+  "sourcefile": "/etc/postgresql/10/main/postgresql.conf",
+  "sourceline": "580",
+  "pending_restart": "f"
+}

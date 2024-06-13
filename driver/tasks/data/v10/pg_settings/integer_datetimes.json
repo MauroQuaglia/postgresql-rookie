@@ -1,0 +1,19 @@
+{
+  "name": "integer_datetimes",
+  "setting": "on",
+  "unit": null,
+  "category": "Preset Options",
+  "short_desc": "Datetimes are integer based.",
+  "extra_desc": null,
+  "context": "internal",
+  "vartype": "bool",
+  "source": "default",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": null,
+  "boot_val": "on",
+  "reset_val": "on",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

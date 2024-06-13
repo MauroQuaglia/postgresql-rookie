@@ -1,0 +1,19 @@
+{
+  "name": "wal_block_size",
+  "setting": "8192",
+  "unit": null,
+  "category": "Preset Options",
+  "short_desc": "Shows the block size in the write ahead log.",
+  "extra_desc": null,
+  "context": "internal",
+  "vartype": "integer",
+  "source": "default",
+  "min_val": "8192",
+  "max_val": "8192",
+  "enumvals": null,
+  "boot_val": "8192",
+  "reset_val": "8192",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

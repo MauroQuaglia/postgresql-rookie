@@ -1,0 +1,19 @@
+{
+  "name": "replacement_sort_tuples",
+  "setting": "150000",
+  "unit": null,
+  "category": "Resource Usage / Memory",
+  "short_desc": "Sets the maximum number of tuples to be sorted using replacement selection.",
+  "extra_desc": "When more tuples than this are present, quicksort will be used.",
+  "context": "user",
+  "vartype": "integer",
+  "source": "default",
+  "min_val": "0",
+  "max_val": "2147483647",
+  "enumvals": null,
+  "boot_val": "150000",
+  "reset_val": "150000",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

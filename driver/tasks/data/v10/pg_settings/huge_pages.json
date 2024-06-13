@@ -1,0 +1,19 @@
+{
+  "name": "huge_pages",
+  "setting": "try",
+  "unit": null,
+  "category": "Resource Usage / Memory",
+  "short_desc": "Use of huge pages on Linux.",
+  "extra_desc": null,
+  "context": "postmaster",
+  "vartype": "enum",
+  "source": "default",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": "{off,on,try}",
+  "boot_val": "try",
+  "reset_val": "try",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

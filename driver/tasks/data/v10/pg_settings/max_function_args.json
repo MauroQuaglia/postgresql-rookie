@@ -1,0 +1,19 @@
+{
+  "name": "max_function_args",
+  "setting": "100",
+  "unit": null,
+  "category": "Preset Options",
+  "short_desc": "Shows the maximum number of function arguments.",
+  "extra_desc": null,
+  "context": "internal",
+  "vartype": "integer",
+  "source": "default",
+  "min_val": "100",
+  "max_val": "100",
+  "enumvals": null,
+  "boot_val": "100",
+  "reset_val": "100",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "wal_sender_timeout",
+  "setting": "60000",
+  "unit": "ms",
+  "category": "Replication / Sending Servers",
+  "short_desc": "Sets the maximum time to wait for WAL replication.",
+  "extra_desc": null,
+  "context": "sighup",
+  "vartype": "integer",
+  "source": "default",
+  "min_val": "0",
+  "max_val": "2147483647",
+  "enumvals": null,
+  "boot_val": "60000",
+  "reset_val": "60000",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

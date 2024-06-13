@@ -1,0 +1,19 @@
+{
+  "name": "max_parallel_workers_per_gather",
+  "setting": "2",
+  "unit": null,
+  "category": "Resource Usage / Asynchronous Behavior",
+  "short_desc": "Sets the maximum number of parallel processes per executor node.",
+  "extra_desc": null,
+  "context": "user",
+  "vartype": "integer",
+  "source": "default",
+  "min_val": "0",
+  "max_val": "1024",
+  "enumvals": null,
+  "boot_val": "2",
+  "reset_val": "2",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

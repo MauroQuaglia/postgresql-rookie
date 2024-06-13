@@ -1,0 +1,19 @@
+{
+  "name": "geqo_seed",
+  "setting": "0",
+  "unit": null,
+  "category": "Query Tuning / Genetic Query Optimizer",
+  "short_desc": "GEQO: seed for random path selection.",
+  "extra_desc": null,
+  "context": "user",
+  "vartype": "real",
+  "source": "default",
+  "min_val": "0",
+  "max_val": "1",
+  "enumvals": null,
+  "boot_val": "0",
+  "reset_val": "0",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

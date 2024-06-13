@@ -1,0 +1,19 @@
+{
+  "name": "ssl_ecdh_curve",
+  "setting": "prime256v1",
+  "unit": null,
+  "category": "Connections and Authentication / Security and Authentication",
+  "short_desc": "Sets the curve to use for ECDH.",
+  "extra_desc": null,
+  "context": "sighup",
+  "vartype": "string",
+  "source": "default",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": null,
+  "boot_val": "prime256v1",
+  "reset_val": "prime256v1",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "wal_level",
+  "setting": "replica",
+  "unit": null,
+  "category": "Write-Ahead Log / Settings",
+  "short_desc": "Set the level of information written to the WAL.",
+  "extra_desc": null,
+  "context": "postmaster",
+  "vartype": "enum",
+  "source": "default",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": "{minimal,replica,logical}",
+  "boot_val": "replica",
+  "reset_val": "replica",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "transaction_isolation",
+  "setting": "read committed",
+  "unit": null,
+  "category": "Client Connection Defaults / Statement Behavior",
+  "short_desc": "Sets the current transaction's isolation level.",
+  "extra_desc": null,
+  "context": "user",
+  "vartype": "string",
+  "source": "override",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": null,
+  "boot_val": "default",
+  "reset_val": "default",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

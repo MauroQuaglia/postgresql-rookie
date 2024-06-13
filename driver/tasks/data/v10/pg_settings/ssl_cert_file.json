@@ -1,0 +1,19 @@
+{
+  "name": "ssl_cert_file",
+  "setting": "/etc/ssl/certs/ssl-cert-snakeoil.pem",
+  "unit": null,
+  "category": "Connections and Authentication / Security and Authentication",
+  "short_desc": "Location of the SSL server certificate file.",
+  "extra_desc": null,
+  "context": "sighup",
+  "vartype": "string",
+  "source": "configuration file",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": null,
+  "boot_val": "server.crt",
+  "reset_val": "/etc/ssl/certs/ssl-cert-snakeoil.pem",
+  "sourcefile": "/etc/postgresql/10/main/postgresql.conf",
+  "sourceline": "84",
+  "pending_restart": "f"
+}

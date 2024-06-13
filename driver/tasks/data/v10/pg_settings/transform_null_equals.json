@@ -1,0 +1,19 @@
+{
+  "name": "transform_null_equals",
+  "setting": "off",
+  "unit": null,
+  "category": "Version and Platform Compatibility / Other Platforms and Clients",
+  "short_desc": "Treats \"expr=NULL\" as \"expr IS NULL\".",
+  "extra_desc": "When turned on, expressions of the form expr = NULL (or NULL = expr) are treated as expr IS NULL, that is, they return true if expr evaluates to the null value, and false otherwise. The correct behavior of expr = NULL is to always return null (unknown).",
+  "context": "user",
+  "vartype": "bool",
+  "source": "default",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": null,
+  "boot_val": "off",
+  "reset_val": "off",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

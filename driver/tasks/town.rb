@@ -1,12 +1,20 @@
 #!/usr/bin/env ruby
 
 require 'pg'
+require 'json'
 
 conn = PG.connect(host: '127.0.0.1', port: 2345, dbname: 'town', user: 'postgres')
 
-conn.exec("SELECT * FROM school.courses;") do |result|
+conn.exec("SELECT version();") do |result|
   result.each do |row|
-    puts "ROW: #{row['course_id']} #{row['title']} #{row['hours']}"
+    puts row['version']
   end
 end
 
+conn.exec("SELECT * FROM pg_settings;") do |result|
+  result.each do |row|
+    File.open("./data/v10/pg_settings/#{row['name']}.json", 'w') do |file|
+      file.write(JSON.generate(row))
+    end
+  end
+end

@@ -1,0 +1,19 @@
+{
+  "name": "log_filename",
+  "setting": "postgresql-%Y-%m-%d_%H%M%S.log",
+  "unit": null,
+  "category": "Reporting and Logging / Where to Log",
+  "short_desc": "Sets the file name pattern for log files.",
+  "extra_desc": null,
+  "context": "sighup",
+  "vartype": "string",
+  "source": "default",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": null,
+  "boot_val": "postgresql-%Y-%m-%d_%H%M%S.log",
+  "reset_val": "postgresql-%Y-%m-%d_%H%M%S.log",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "syslog_split_messages",
+  "setting": "on",
+  "unit": null,
+  "category": "Reporting and Logging / Where to Log",
+  "short_desc": "Split messages sent to syslog by lines and to fit into 1024 bytes.",
+  "extra_desc": null,
+  "context": "sighup",
+  "vartype": "bool",
+  "source": "default",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": null,
+  "boot_val": "on",
+  "reset_val": "on",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

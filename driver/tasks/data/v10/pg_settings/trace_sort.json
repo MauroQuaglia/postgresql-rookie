@@ -1,0 +1,19 @@
+{
+  "name": "trace_sort",
+  "setting": "off",
+  "unit": null,
+  "category": "Developer Options",
+  "short_desc": "Emit information about resource usage in sorting.",
+  "extra_desc": null,
+  "context": "user",
+  "vartype": "bool",
+  "source": "default",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": null,
+  "boot_val": "off",
+  "reset_val": "off",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

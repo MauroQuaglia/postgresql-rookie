@@ -1,0 +1,19 @@
+{
+  "name": "port",
+  "setting": "5432",
+  "unit": null,
+  "category": "Connections and Authentication / Connection Settings",
+  "short_desc": "Sets the TCP port the server listens on.",
+  "extra_desc": null,
+  "context": "postmaster",
+  "vartype": "integer",
+  "source": "configuration file",
+  "min_val": "1",
+  "max_val": "65535",
+  "enumvals": null,
+  "boot_val": "5432",
+  "reset_val": "5432",
+  "sourcefile": "/etc/postgresql/10/main/postgresql.conf",
+  "sourceline": "63",
+  "pending_restart": "f"
+}

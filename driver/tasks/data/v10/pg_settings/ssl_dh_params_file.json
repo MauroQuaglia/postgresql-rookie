@@ -1,0 +1,19 @@
+{
+  "name": "ssl_dh_params_file",
+  "setting": "",
+  "unit": null,
+  "category": "Connections and Authentication / Security and Authentication",
+  "short_desc": "Location of the SSL DH parameters file.",
+  "extra_desc": null,
+  "context": "sighup",
+  "vartype": "string",
+  "source": "default",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": null,
+  "boot_val": "",
+  "reset_val": "",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

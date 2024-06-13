@@ -1,0 +1,19 @@
+{
+  "name": "max_pred_locks_per_relation",
+  "setting": "-2",
+  "unit": null,
+  "category": "Lock Management",
+  "short_desc": "Sets the maximum number of predicate-locked pages and tuples per relation.",
+  "extra_desc": "If more than this total of pages and tuples in the same relation are locked by a connection, those locks are replaced by a relation-level lock.",
+  "context": "sighup",
+  "vartype": "integer",
+  "source": "default",
+  "min_val": "-2147483648",
+  "max_val": "2147483647",
+  "enumvals": null,
+  "boot_val": "-2",
+  "reset_val": "-2",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

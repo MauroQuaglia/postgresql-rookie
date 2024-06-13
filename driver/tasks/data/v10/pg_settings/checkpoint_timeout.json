@@ -1,0 +1,19 @@
+{
+  "name": "checkpoint_timeout",
+  "setting": "300",
+  "unit": "s",
+  "category": "Write-Ahead Log / Checkpoints",
+  "short_desc": "Sets the maximum time between automatic WAL checkpoints.",
+  "extra_desc": null,
+  "context": "sighup",
+  "vartype": "integer",
+  "source": "default",
+  "min_val": "30",
+  "max_val": "86400",
+  "enumvals": null,
+  "boot_val": "300",
+  "reset_val": "300",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

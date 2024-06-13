@@ -1,0 +1,19 @@
+{
+  "name": "random_page_cost",
+  "setting": "4",
+  "unit": null,
+  "category": "Query Tuning / Planner Cost Constants",
+  "short_desc": "Sets the planner's estimate of the cost of a nonsequentially fetched disk page.",
+  "extra_desc": null,
+  "context": "user",
+  "vartype": "real",
+  "source": "default",
+  "min_val": "0",
+  "max_val": "1.79769e+308",
+  "enumvals": null,
+  "boot_val": "4",
+  "reset_val": "4",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

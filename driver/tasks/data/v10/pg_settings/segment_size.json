@@ -1,0 +1,19 @@
+{
+  "name": "segment_size",
+  "setting": "131072",
+  "unit": "8kB",
+  "category": "Preset Options",
+  "short_desc": "Shows the number of pages per disk file.",
+  "extra_desc": null,
+  "context": "internal",
+  "vartype": "integer",
+  "source": "default",
+  "min_val": "131072",
+  "max_val": "131072",
+  "enumvals": null,
+  "boot_val": "131072",
+  "reset_val": "131072",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

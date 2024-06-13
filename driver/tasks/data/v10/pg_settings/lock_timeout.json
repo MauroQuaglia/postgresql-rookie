@@ -1,0 +1,19 @@
+{
+  "name": "lock_timeout",
+  "setting": "0",
+  "unit": "ms",
+  "category": "Client Connection Defaults / Statement Behavior",
+  "short_desc": "Sets the maximum allowed duration of any wait for a lock.",
+  "extra_desc": "A value of 0 turns off the timeout.",
+  "context": "user",
+  "vartype": "integer",
+  "source": "default",
+  "min_val": "0",
+  "max_val": "2147483647",
+  "enumvals": null,
+  "boot_val": "0",
+  "reset_val": "0",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

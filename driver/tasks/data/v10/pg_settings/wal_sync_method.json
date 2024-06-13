@@ -1,0 +1,19 @@
+{
+  "name": "wal_sync_method",
+  "setting": "fdatasync",
+  "unit": null,
+  "category": "Write-Ahead Log / Settings",
+  "short_desc": "Selects the method used for forcing WAL updates to disk.",
+  "extra_desc": null,
+  "context": "sighup",
+  "vartype": "enum",
+  "source": "default",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": "{fsync,fdatasync,open_sync,open_datasync}",
+  "boot_val": "fdatasync",
+  "reset_val": "fdatasync",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "fsync",
+  "setting": "on",
+  "unit": null,
+  "category": "Write-Ahead Log / Settings",
+  "short_desc": "Forces synchronization of updates to disk.",
+  "extra_desc": "The server will use the fsync() system call in several places to make sure that updates are physically written to disk. This insures that a database cluster will recover to a consistent state after an operating system or hardware crash.",
+  "context": "sighup",
+  "vartype": "bool",
+  "source": "default",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": null,
+  "boot_val": "on",
+  "reset_val": "on",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

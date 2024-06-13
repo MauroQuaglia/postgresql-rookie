@@ -1,0 +1,19 @@
+{
+  "name": "log_line_prefix",
+  "setting": "%m [%p] %q%u@%d ",
+  "unit": null,
+  "category": "Reporting and Logging / What to Log",
+  "short_desc": "Controls information prefixed to each log line.",
+  "extra_desc": "If blank, no prefix is used.",
+  "context": "sighup",
+  "vartype": "string",
+  "source": "configuration file",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": null,
+  "boot_val": "%m [%p] ",
+  "reset_val": "%m [%p] %q%u@%d ",
+  "sourcefile": "/etc/postgresql/10/main/postgresql.conf",
+  "sourceline": "434",
+  "pending_restart": "f"
+}

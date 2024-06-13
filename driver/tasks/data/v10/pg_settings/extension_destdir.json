@@ -1,0 +1,19 @@
+{
+  "name": "extension_destdir",
+  "setting": "",
+  "unit": null,
+  "category": "File Locations",
+  "short_desc": "Path to prepend for extension loading",
+  "extra_desc": "This directory is prepended to paths when loading extensions (control and SQL files), and to the '$libdir' directive when loading modules that back functions. The location is made configurable to allow build-time testing of extensions that do not have been installed to their proper location yet.",
+  "context": "superuser",
+  "vartype": "string",
+  "source": "default",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": null,
+  "boot_val": "",
+  "reset_val": "",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

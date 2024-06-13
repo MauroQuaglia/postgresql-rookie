@@ -1,0 +1,19 @@
+{
+  "name": "bgwriter_delay",
+  "setting": "200",
+  "unit": "ms",
+  "category": "Resource Usage / Background Writer",
+  "short_desc": "Background writer sleep time between rounds.",
+  "extra_desc": null,
+  "context": "sighup",
+  "vartype": "integer",
+  "source": "default",
+  "min_val": "10",
+  "max_val": "10000",
+  "enumvals": null,
+  "boot_val": "200",
+  "reset_val": "200",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

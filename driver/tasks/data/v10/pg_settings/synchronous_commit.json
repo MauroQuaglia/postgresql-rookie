@@ -1,0 +1,19 @@
+{
+  "name": "synchronous_commit",
+  "setting": "on",
+  "unit": null,
+  "category": "Write-Ahead Log / Settings",
+  "short_desc": "Sets the current transaction's synchronization level.",
+  "extra_desc": null,
+  "context": "user",
+  "vartype": "enum",
+  "source": "default",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": "{local,remote_write,remote_apply,on,off}",
+  "boot_val": "on",
+  "reset_val": "on",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

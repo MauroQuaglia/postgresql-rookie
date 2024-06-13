@@ -1,0 +1,19 @@
+{
+  "name": "max_index_keys",
+  "setting": "32",
+  "unit": null,
+  "category": "Preset Options",
+  "short_desc": "Shows the maximum number of index keys.",
+  "extra_desc": null,
+  "context": "internal",
+  "vartype": "integer",
+  "source": "default",
+  "min_val": "32",
+  "max_val": "32",
+  "enumvals": null,
+  "boot_val": "32",
+  "reset_val": "32",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

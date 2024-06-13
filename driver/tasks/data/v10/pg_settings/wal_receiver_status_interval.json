@@ -1,0 +1,19 @@
+{
+  "name": "wal_receiver_status_interval",
+  "setting": "10",
+  "unit": "s",
+  "category": "Replication / Standby Servers",
+  "short_desc": "Sets the maximum interval between WAL receiver status reports to the primary.",
+  "extra_desc": null,
+  "context": "sighup",
+  "vartype": "integer",
+  "source": "default",
+  "min_val": "0",
+  "max_val": "2147483",
+  "enumvals": null,
+  "boot_val": "10",
+  "reset_val": "10",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

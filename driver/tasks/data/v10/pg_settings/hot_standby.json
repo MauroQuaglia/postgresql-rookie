@@ -1,0 +1,19 @@
+{
+  "name": "hot_standby",
+  "setting": "on",
+  "unit": null,
+  "category": "Replication / Standby Servers",
+  "short_desc": "Allows connections and queries during recovery.",
+  "extra_desc": null,
+  "context": "postmaster",
+  "vartype": "bool",
+  "source": "default",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": null,
+  "boot_val": "on",
+  "reset_val": "on",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "max_standby_streaming_delay",
+  "setting": "30000",
+  "unit": "ms",
+  "category": "Replication / Standby Servers",
+  "short_desc": "Sets the maximum delay before canceling queries when a hot standby server is processing streamed WAL data.",
+  "extra_desc": null,
+  "context": "sighup",
+  "vartype": "integer",
+  "source": "default",
+  "min_val": "-1",
+  "max_val": "2147483647",
+  "enumvals": null,
+  "boot_val": "30000",
+  "reset_val": "30000",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

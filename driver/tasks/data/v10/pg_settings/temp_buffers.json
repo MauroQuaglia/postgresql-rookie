@@ -1,0 +1,19 @@
+{
+  "name": "temp_buffers",
+  "setting": "1024",
+  "unit": "8kB",
+  "category": "Resource Usage / Memory",
+  "short_desc": "Sets the maximum number of temporary buffers used by each session.",
+  "extra_desc": null,
+  "context": "user",
+  "vartype": "integer",
+  "source": "default",
+  "min_val": "100",
+  "max_val": "1073741823",
+  "enumvals": null,
+  "boot_val": "1024",
+  "reset_val": "1024",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

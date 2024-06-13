@@ -1,0 +1,19 @@
+{
+  "name": "autovacuum_vacuum_threshold",
+  "setting": "50",
+  "unit": null,
+  "category": "Autovacuum",
+  "short_desc": "Minimum number of tuple updates or deletes prior to vacuum.",
+  "extra_desc": null,
+  "context": "sighup",
+  "vartype": "integer",
+  "source": "default",
+  "min_val": "0",
+  "max_val": "2147483647",
+  "enumvals": null,
+  "boot_val": "50",
+  "reset_val": "50",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "syslog_ident",
+  "setting": "postgres",
+  "unit": null,
+  "category": "Reporting and Logging / Where to Log",
+  "short_desc": "Sets the program name used to identify PostgreSQL messages in syslog.",
+  "extra_desc": null,
+  "context": "sighup",
+  "vartype": "string",
+  "source": "default",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": null,
+  "boot_val": "postgres",
+  "reset_val": "postgres",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "max_wal_size",
+  "setting": "1024",
+  "unit": "MB",
+  "category": "Write-Ahead Log / Checkpoints",
+  "short_desc": "Sets the WAL size that triggers a checkpoint.",
+  "extra_desc": null,
+  "context": "sighup",
+  "vartype": "integer",
+  "source": "default",
+  "min_val": "2",
+  "max_val": "2147483647",
+  "enumvals": null,
+  "boot_val": "1024",
+  "reset_val": "1024",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

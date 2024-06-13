@@ -1,0 +1,19 @@
+{
+  "name": "geqo_threshold",
+  "setting": "12",
+  "unit": null,
+  "category": "Query Tuning / Genetic Query Optimizer",
+  "short_desc": "Sets the threshold of FROM items beyond which GEQO is used.",
+  "extra_desc": null,
+  "context": "user",
+  "vartype": "integer",
+  "source": "default",
+  "min_val": "2",
+  "max_val": "2147483647",
+  "enumvals": null,
+  "boot_val": "12",
+  "reset_val": "12",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

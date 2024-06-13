@@ -1,0 +1,19 @@
+{
+  "name": "unix_socket_permissions",
+  "setting": "0777",
+  "unit": null,
+  "category": "Connections and Authentication / Connection Settings",
+  "short_desc": "Sets the access permissions of the Unix-domain socket.",
+  "extra_desc": "Unix-domain sockets use the usual Unix file system permission set. The parameter value is expected to be a numeric mode specification in the form accepted by the chmod and umask system calls. (To use the customary octal format the number must start with a 0 (zero).)",
+  "context": "postmaster",
+  "vartype": "integer",
+  "source": "default",
+  "min_val": "0",
+  "max_val": "511",
+  "enumvals": null,
+  "boot_val": "511",
+  "reset_val": "511",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "pre_auth_delay",
+  "setting": "0",
+  "unit": "s",
+  "category": "Developer Options",
+  "short_desc": "Waits N seconds on connection startup before authentication.",
+  "extra_desc": "This allows attaching a debugger to the process.",
+  "context": "sighup",
+  "vartype": "integer",
+  "source": "default",
+  "min_val": "0",
+  "max_val": "60",
+  "enumvals": null,
+  "boot_val": "0",
+  "reset_val": "0",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

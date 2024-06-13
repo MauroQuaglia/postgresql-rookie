@@ -1,0 +1,19 @@
+{
+  "name": "trace_recovery_messages",
+  "setting": "log",
+  "unit": null,
+  "category": "Developer Options",
+  "short_desc": "Enables logging of recovery-related debugging information.",
+  "extra_desc": "Each level includes all the levels that follow it. The later the level, the fewer messages are sent.",
+  "context": "sighup",
+  "vartype": "enum",
+  "source": "default",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": "{debug5,debug4,debug3,debug2,debug1,log,notice,warning,error}",
+  "boot_val": "log",
+  "reset_val": "log",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

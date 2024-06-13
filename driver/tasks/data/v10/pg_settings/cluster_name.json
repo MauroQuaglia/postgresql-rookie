@@ -1,0 +1,19 @@
+{
+  "name": "cluster_name",
+  "setting": "10/main",
+  "unit": null,
+  "category": "Process Title",
+  "short_desc": "Sets the name of the cluster, which is included in the process title.",
+  "extra_desc": null,
+  "context": "postmaster",
+  "vartype": "string",
+  "source": "configuration file",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": null,
+  "boot_val": "",
+  "reset_val": "10/main",
+  "sourcefile": "/etc/postgresql/10/main/postgresql.conf",
+  "sourceline": "466",
+  "pending_restart": "f"
+}

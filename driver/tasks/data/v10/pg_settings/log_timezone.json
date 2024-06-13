@@ -1,0 +1,19 @@
+{
+  "name": "log_timezone",
+  "setting": "Etc/UTC",
+  "unit": null,
+  "category": "Reporting and Logging / What to Log",
+  "short_desc": "Sets the time zone to use in log messages.",
+  "extra_desc": null,
+  "context": "sighup",
+  "vartype": "string",
+  "source": "configuration file",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": null,
+  "boot_val": "GMT",
+  "reset_val": "Etc/UTC",
+  "sourcefile": "/etc/postgresql/10/main/postgresql.conf",
+  "sourceline": "461",
+  "pending_restart": "f"
+}

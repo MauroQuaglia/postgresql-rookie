@@ -1,0 +1,19 @@
+{
+  "name": "commit_siblings",
+  "setting": "5",
+  "unit": null,
+  "category": "Write-Ahead Log / Settings",
+  "short_desc": "Sets the minimum concurrent open transactions before performing commit_delay.",
+  "extra_desc": null,
+  "context": "user",
+  "vartype": "integer",
+  "source": "default",
+  "min_val": "0",
+  "max_val": "1000",
+  "enumvals": null,
+  "boot_val": "5",
+  "reset_val": "5",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

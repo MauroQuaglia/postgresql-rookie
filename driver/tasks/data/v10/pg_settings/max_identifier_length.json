@@ -1,0 +1,19 @@
+{
+  "name": "max_identifier_length",
+  "setting": "63",
+  "unit": null,
+  "category": "Preset Options",
+  "short_desc": "Shows the maximum identifier length.",
+  "extra_desc": null,
+  "context": "internal",
+  "vartype": "integer",
+  "source": "default",
+  "min_val": "63",
+  "max_val": "63",
+  "enumvals": null,
+  "boot_val": "63",
+  "reset_val": "63",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

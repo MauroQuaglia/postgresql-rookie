@@ -1,0 +1,19 @@
+{
+  "name": "timezone_abbreviations",
+  "setting": "Default",
+  "unit": null,
+  "category": "Client Connection Defaults / Locale and Formatting",
+  "short_desc": "Selects a file of time zone abbreviations.",
+  "extra_desc": null,
+  "context": "user",
+  "vartype": "string",
+  "source": "default",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": null,
+  "boot_val": null,
+  "reset_val": "Default",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

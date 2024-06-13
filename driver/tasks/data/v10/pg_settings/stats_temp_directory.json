@@ -1,0 +1,19 @@
+{
+  "name": "stats_temp_directory",
+  "setting": "/var/run/postgresql/10-main.pg_stat_tmp",
+  "unit": null,
+  "category": "Statistics / Query and Index Statistics Collector",
+  "short_desc": "Writes temporary statistics files to the specified directory.",
+  "extra_desc": null,
+  "context": "sighup",
+  "vartype": "string",
+  "source": "configuration file",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": null,
+  "boot_val": "pg_stat_tmp",
+  "reset_val": "/var/run/postgresql/10-main.pg_stat_tmp",
+  "sourcefile": "/etc/postgresql/10/main/postgresql.conf",
+  "sourceline": "482",
+  "pending_restart": "f"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "local_preload_libraries",
+  "setting": "",
+  "unit": null,
+  "category": "Client Connection Defaults / Shared Library Preloading",
+  "short_desc": "Lists unprivileged shared libraries to preload into each backend.",
+  "extra_desc": null,
+  "context": "user",
+  "vartype": "string",
+  "source": "default",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": null,
+  "boot_val": "",
+  "reset_val": "",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

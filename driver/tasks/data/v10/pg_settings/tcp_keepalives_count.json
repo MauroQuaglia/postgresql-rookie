@@ -1,0 +1,19 @@
+{
+  "name": "tcp_keepalives_count",
+  "setting": "9",
+  "unit": null,
+  "category": "Client Connection Defaults / Other Defaults",
+  "short_desc": "Maximum number of TCP keepalive retransmits.",
+  "extra_desc": "This controls the number of consecutive keepalive retransmits that can be lost before a connection is considered dead. A value of 0 uses the system default.",
+  "context": "user",
+  "vartype": "integer",
+  "source": "default",
+  "min_val": "0",
+  "max_val": "2147483647",
+  "enumvals": null,
+  "boot_val": "0",
+  "reset_val": "0",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "default_tablespace",
+  "setting": "",
+  "unit": null,
+  "category": "Client Connection Defaults / Statement Behavior",
+  "short_desc": "Sets the default tablespace to create tables and indexes in.",
+  "extra_desc": "An empty string selects the database's default tablespace.",
+  "context": "user",
+  "vartype": "string",
+  "source": "default",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": null,
+  "boot_val": "",
+  "reset_val": "",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

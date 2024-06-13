@@ -1,0 +1,19 @@
+{
+  "name": "full_page_writes",
+  "setting": "on",
+  "unit": null,
+  "category": "Write-Ahead Log / Settings",
+  "short_desc": "Writes full pages to WAL when first modified after a checkpoint.",
+  "extra_desc": "A page write in process during an operating system crash might be only partially written to disk.  During recovery, the row changes stored in WAL are not enough to recover.  This option writes pages when first modified after a checkpoint to WAL so full recovery is possible.",
+  "context": "sighup",
+  "vartype": "bool",
+  "source": "default",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": null,
+  "boot_val": "on",
+  "reset_val": "on",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

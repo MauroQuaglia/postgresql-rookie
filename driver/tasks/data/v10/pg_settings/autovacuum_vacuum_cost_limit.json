@@ -1,0 +1,19 @@
+{
+  "name": "autovacuum_vacuum_cost_limit",
+  "setting": "-1",
+  "unit": null,
+  "category": "Autovacuum",
+  "short_desc": "Vacuum cost amount available before napping, for autovacuum.",
+  "extra_desc": null,
+  "context": "sighup",
+  "vartype": "integer",
+  "source": "default",
+  "min_val": "-1",
+  "max_val": "10000",
+  "enumvals": null,
+  "boot_val": "-1",
+  "reset_val": "-1",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

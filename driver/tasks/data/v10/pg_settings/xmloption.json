@@ -1,0 +1,19 @@
+{
+  "name": "xmloption",
+  "setting": "content",
+  "unit": null,
+  "category": "Client Connection Defaults / Statement Behavior",
+  "short_desc": "Sets whether XML data in implicit parsing and serialization operations is to be considered as documents or content fragments.",
+  "extra_desc": null,
+  "context": "user",
+  "vartype": "enum",
+  "source": "default",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": "{content,document}",
+  "boot_val": "content",
+  "reset_val": "content",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

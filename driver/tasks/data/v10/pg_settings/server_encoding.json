@@ -1,0 +1,19 @@
+{
+  "name": "server_encoding",
+  "setting": "UTF8",
+  "unit": null,
+  "category": "Client Connection Defaults / Locale and Formatting",
+  "short_desc": "Sets the server (database) character set encoding.",
+  "extra_desc": null,
+  "context": "internal",
+  "vartype": "string",
+  "source": "override",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": null,
+  "boot_val": "SQL_ASCII",
+  "reset_val": "UTF8",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

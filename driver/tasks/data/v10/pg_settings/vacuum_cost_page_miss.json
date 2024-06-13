@@ -1,0 +1,19 @@
+{
+  "name": "vacuum_cost_page_miss",
+  "setting": "10",
+  "unit": null,
+  "category": "Resource Usage / Cost-Based Vacuum Delay",
+  "short_desc": "Vacuum cost for a page not found in the buffer cache.",
+  "extra_desc": null,
+  "context": "user",
+  "vartype": "integer",
+  "source": "default",
+  "min_val": "0",
+  "max_val": "10000",
+  "enumvals": null,
+  "boot_val": "10",
+  "reset_val": "10",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

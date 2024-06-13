@@ -1,0 +1,19 @@
+{
+  "name": "synchronous_standby_names",
+  "setting": "",
+  "unit": null,
+  "category": "Replication / Master Server",
+  "short_desc": "Number of synchronous standbys and list of names of potential synchronous ones.",
+  "extra_desc": null,
+  "context": "sighup",
+  "vartype": "string",
+  "source": "default",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": null,
+  "boot_val": "",
+  "reset_val": "",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "server_version",
+  "setting": "10.23 (Debian 10.23-3.pgdg110+2)",
+  "unit": null,
+  "category": "Preset Options",
+  "short_desc": "Shows the server version.",
+  "extra_desc": null,
+  "context": "internal",
+  "vartype": "string",
+  "source": "default",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": null,
+  "boot_val": "10.23 (Debian 10.23-3.pgdg110+2)",
+  "reset_val": "10.23 (Debian 10.23-3.pgdg110+2)",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "log_destination",
+  "setting": "stderr",
+  "unit": null,
+  "category": "Reporting and Logging / Where to Log",
+  "short_desc": "Sets the destination for server log output.",
+  "extra_desc": "Valid values are combinations of \"stderr\", \"syslog\", \"csvlog\", and \"eventlog\", depending on the platform.",
+  "context": "sighup",
+  "vartype": "string",
+  "source": "default",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": null,
+  "boot_val": "stderr",
+  "reset_val": "stderr",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "krb_server_keyfile",
+  "setting": "FILE:/etc/postgresql-common/krb5.keytab",
+  "unit": null,
+  "category": "Connections and Authentication / Security and Authentication",
+  "short_desc": "Sets the location of the Kerberos server key file.",
+  "extra_desc": null,
+  "context": "sighup",
+  "vartype": "string",
+  "source": "default",
+  "min_val": null,
+  "max_val": null,
+  "enumvals": null,
+  "boot_val": "FILE:/etc/postgresql-common/krb5.keytab",
+  "reset_val": "FILE:/etc/postgresql-common/krb5.keytab",
+  "sourcefile": null,
+  "sourceline": null,
+  "pending_restart": "f"
+}
