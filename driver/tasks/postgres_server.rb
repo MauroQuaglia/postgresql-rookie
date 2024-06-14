@@ -11,6 +11,8 @@ conn.exec("SELECT version();") do |result|
   end
 end
 
+
+# Basta fare anche "SHOW ALL" da DBeaver;
 # I pg_setting sono le configurazioni del server PostgreSQL in generale.
 # Mentre pg_catalog e information_schema sono quelle dei vari DB.
 # pg_catalog è più completo rispetto a information_schema.

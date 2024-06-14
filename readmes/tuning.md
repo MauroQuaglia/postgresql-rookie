@@ -13,3 +13,9 @@ Le "unlogged table" (tabelle non registrate) in PostgreSQL sono tabelle temporan
 le modifiche nel log di transazione WAL (Write-Ahead Logging). 
 Questo significa che le modifiche effettuate su queste tabelle non vengono scritte in modo permanente sul disco e non sono ripristinabili dopo un arresto anomalo del database.
 Dovrebbero essere utilizzate con cautela e solo in situazioni in cui la persistenza e la ripristinabilità dei dati non sono una priorità.
+
+# Posso anche interrogare direttamente il server
+* `select name, setting from pg_settings where category ILIKE '%Tuning%';`
+
+# Risorse
+[postgresql | Tuning_Your_PostgreSQL_Server](https://wiki.postgresql.org/wiki/Tuning_Your_PostgreSQL_Server)

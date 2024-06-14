@@ -4,6 +4,7 @@
 * Errata corrige: [oreilly | errata](https://www.oreilly.com/catalog/errata.csp?isbn=0636920052715)
 * I fork: [postgresql | PostgreSQL_derived_databases](https://wiki.postgresql.org/wiki/PostgreSQL_derived_databases)
 * Download: [postgresql | download](https://www.postgresql.org/download/)
+* Tuning: [postgresql | Tuning_Your_PostgreSQL_Server](https://wiki.postgresql.org/wiki/Tuning_Your_PostgreSQL_Server)
 
 # Funzionailità delle varie version
 * Feature Matrix: [postgresql | featurematrix](https://www.postgresql.org/about/featurematrix/)

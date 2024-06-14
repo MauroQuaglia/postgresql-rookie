@@ -1,5 +1,6 @@
 # postgresql-rookie
-* Errata: [errata](https://www.oreilly.com/catalog/errata.csp?isbn=0636920052715)
+* Tutti i settings "postmaster" necessitano un restart, quelli invece "user" basta un reload.
+
 * Comandi utili:
   * `sudo systemctl status postgresql`
 * Controllare gli aspetti della localizzazione con il comando `locale` in particolare:
