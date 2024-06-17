@@ -58,6 +58,15 @@
     mode: "0644"
   when: postgres_custom_config
 
+- name: "Copy postgresql.auto.conf file"
+  copy:
+    src: "customs/v{{ postgres_version }}/postgresql.auto.conf"
+    dest: "/var/lib/postgresql/{{ postgres_version }}/main"
+    owner: "postgres"
+    group: "postgres"
+    mode: "0600"
+  when: postgres_custom_config
+
 - name: "Copy pg_ident.conf file"
   copy:
     src: "customs/v{{ postgres_version }}/pg_ident.conf"
