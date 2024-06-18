@@ -40,3 +40,11 @@ scp -i /home/xpuser/mauro-quaglia/postgresql-rookie/ansible/.vagrant/machines/pg
  * Poi apro DBeaver e provo a connettermi.
 # Dump
 * Come Local client scegliere: `/usr/lib/postgresql/11`
+----
+# Creare utente
+* Creare utente:
+* `sudo -u postgres psql`
+* `CREATE ROLE vagrant WITH LOGIN PASSWORD '63623900c8bbf21c706c45dcb7a2c083';`
+  * la password è l'md5 della stringa "vagrant".
+* `GRANT ALL PRIVILEGES ON DATABASE town TO vagrant;`
+* Poi da qui lo posso vedere: `select * from pg_catalog.pg_authid;`
