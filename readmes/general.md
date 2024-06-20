@@ -41,10 +41,45 @@ scp -i /home/xpuser/mauro-quaglia/postgresql-rookie/ansible/.vagrant/machines/pg
 # Dump
 * Come Local client scegliere: `/usr/lib/postgresql/11`
 ----
-# Creare utente
-* Creare utente:
-* `sudo -u postgres psql`
-* `CREATE ROLE vagrant WITH LOGIN PASSWORD '63623900c8bbf21c706c45dcb7a2c083';`
-  * la password è l'md5 della stringa "vagrant".
-* `GRANT ALL PRIVILEGES ON DATABASE town TO vagrant;`
-* Poi da qui lo posso vedere: `select * from pg_catalog.pg_authid;`
+# Utenti e Ruoli
+* Creo Utente.
+* All'Utente assegno un Ruolo.
+  * I ruoli definiscono una serie di permessi e capacità da assegnare agli utenti.
+  * `SUPERUSER`: bypass di tutti i permessi necessari eccetto la login.
+  * `LOGIN`: consente di connettersi al database.
+  * `CREATEDB`: consente di creare database.
+  * `CREATEROLE`: permette di gestire i ruoli.
+  * `REPLICATION`: consente gestione delle repliche.
+  * `PASSWORD`: gli assegna una password.
+  * `INHERIT`: eredita i privilegi dei ruoli di cui è membro.
+  * `BYPASSRLS`: può bypassare le regole di sicurezza a livello di riga. (è possibile anche far vedere solo determinati record di una tabella)
+* Dato che un utente senza ruolo non serve a niente si crea già da subito il ruolo.
+
+* Entro come utente `postgres` (`superuser`)
+  * `sudo -u postgres psql`
+* Voglio creare un nuovo ruolo.
+  * Dato che sono utente postgres (quindi superuser) lo posso fare.
+  * Il ruolo che vado a definire è a livello di istanza del server, quindi tutti i database lo vedono.
+  * `CREATE ROLE messi;`
+    * Di default viene fatto come `CREATE ROLE messi WITH NOSUPERUSER NOCREATEDB NOCREATEROLE INHERIT NOLOGIN NOREPLICATION NOBYPASSRLS CONNECTION LIMIT -1;`
+  * Di fatto questo utente non riesce a fare nulla, perché non ha neanche il ruolo di `LOGIN`.
+  * Per cui anche se definito nel `ph_hba.conf`, sui database non riesce a loggarsi neanche se ha metodo `trust`.
+* Voglio dare più permessi all'utente `messi`, per cui gli do il ruolo `LOGIN` così che possa autenticarsi.
+  * Dato che nel `pg_hba.conf` ha metodo `trust`, la password non gli serve.
+  * `ALTER ROLE messi WITH LOGIN;`
+  * Ora l'utente `messi` si può loggare senza password ai vari database.
+  * Tuttavia neanche riesce a vedere i dati delle tabelle perché non ha i permessi per farlo.
+* Diamogli i permessi per visualizzare i dati della tabella `town.school.courses`.
+  * `\c town`
+  * `GRANT USAGE ON SCHEMA school TO messi;` (prima di tutti deve avere i permessi sullo schema)
+  * `GRANT SELECT ON TABLE school.courses TO messi;` (poi per fare select sulla tabella)
+  * OSS: L'utente è definito per tutti i database, ma solo sul database `town` ha i permessi per fare select sulla `tabella school.courses`.
+
+* Quindi quando si ha un utente, gli si assegna
+  * Un ruolo
+  * dei permessi che devono andare a scalate: database -> schema -> tabelle
+  * `CREATE ROLE messi WITH LOGIN;` (utente e ruolo, si logga ai database)
+  * `GRANT USAGE ON SCHEMA school TO messi;` (schema)
+  * `GRANT SELECT ON TABLE school.courses TO messi;` (tabella)
+  * I permessi sono molto granulari e posso essere asseganti anche a funzioni, trigger, ecc,.
+  

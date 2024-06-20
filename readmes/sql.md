@@ -113,3 +113,4 @@ AFTER INSERT OR UPDATE OR DELETE ON school.courses
 FOR EACH STATEMENT
 EXECUTE PROCEDURE refresh_teachers_courses();
 ```
+---

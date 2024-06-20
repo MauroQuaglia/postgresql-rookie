@@ -306,59 +306,17 @@ ALTER TABLE ONLY school.exams
 
 
 --
--- Name: DATABASE town; Type: ACL; Schema: -; Owner: postgres
---
-
-GRANT CONNECT ON DATABASE town TO vagrant;
-
-
---
 -- Name: SCHEMA school; Type: ACL; Schema: -; Owner: postgres
 --
 
-GRANT USAGE ON SCHEMA school TO vagrant;
+GRANT USAGE ON SCHEMA school TO messi;
 
 
 --
 -- Name: TABLE courses; Type: ACL; Schema: school; Owner: postgres
 --
 
-GRANT SELECT ON TABLE school.courses TO vagrant;
-
-
---
--- Name: TABLE exams; Type: ACL; Schema: school; Owner: postgres
---
-
-GRANT SELECT ON TABLE school.exams TO vagrant;
-
-
---
--- Name: TABLE students; Type: ACL; Schema: school; Owner: postgres
---
-
-GRANT SELECT ON TABLE school.students TO vagrant;
-
-
---
--- Name: TABLE students_courses; Type: ACL; Schema: school; Owner: postgres
---
-
-GRANT SELECT ON TABLE school.students_courses TO vagrant;
-
-
---
--- Name: TABLE teachers; Type: ACL; Schema: school; Owner: postgres
---
-
-GRANT SELECT ON TABLE school.teachers TO vagrant;
-
-
---
--- Name: TABLE teachers_courses; Type: ACL; Schema: school; Owner: postgres
---
-
-GRANT SELECT ON TABLE school.teachers_courses TO vagrant;
+GRANT SELECT ON TABLE school.courses TO messi;
 
 
 --
