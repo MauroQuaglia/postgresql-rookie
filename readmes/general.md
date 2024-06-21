@@ -82,4 +82,10 @@ scp -i /home/xpuser/mauro-quaglia/postgresql-rookie/ansible/.vagrant/machines/pg
   * `GRANT USAGE ON SCHEMA school TO messi;` (schema)
   * `GRANT SELECT ON TABLE school.courses TO messi;` (tabella)
   * I permessi sono molto granulari e posso essere asseganti anche a funzioni, trigger, ecc,.
+
+* Per capire chi sono e come cambiare ruolo.
+* Supponiamo di entrare come superuser postgres: `select session_user,current_user;` (postgres, postgres)
+* SET ROLE messi; (divento messi)
+* `select session_user,current_user;` (postgres, messi)
+* Se poi voglio tornare indietro basta fare `RESET ROLE` e torno (postgres, postgres).
   
