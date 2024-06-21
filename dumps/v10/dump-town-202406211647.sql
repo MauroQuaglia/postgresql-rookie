@@ -304,6 +304,8 @@ ALTER TABLE ONLY school.exams
 ALTER TABLE ONLY school.exams
     ADD CONSTRAINT exams_student_id_fkey FOREIGN KEY (student_id) REFERENCES school.students(student_id);
 
+CREATE ROLE messi;
+ALTER ROLE messi WITH LOGIN;
 
 --
 -- Name: SCHEMA school; Type: ACL; Schema: -; Owner: postgres

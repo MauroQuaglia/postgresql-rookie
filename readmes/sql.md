@@ -2,7 +2,7 @@
 * `sudo -u postgres psql`
 * `\l`
 ```
-CREATE DATABASE town;
+CREATE DATABASE town TEMPLATE template0;
 \c town
 
 CREATE SCHEMA library;
