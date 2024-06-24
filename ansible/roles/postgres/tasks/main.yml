@@ -31,15 +31,15 @@
 
 - name: "Add apt repository"
   apt_repository:
-    repo: "deb http://apt.postgresql.org/pub/repos/apt/ {{ansible_distribution_release}}-pgdg main"
+    repo: "deb https://apt.postgresql.org/pub/repos/apt/ {{ansible_distribution_release}}-pgdg main"
     filename: 'pgdg'
 
 - name: "Install PostgreSQL and extensions"
   apt:
     update_cache: true
-  loop:
-    - "postgresql-{{ postgres_version }}"
-    - "postgresql-contrib"
+    pkg:
+      - "postgresql-{{ postgres_version }}"
+      - "postgresql-contrib"
 
 - name: "Copy pg_hba.conf file"
   tags: "config"
