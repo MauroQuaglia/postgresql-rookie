@@ -17,3 +17,7 @@
 # In caso di problemi o bug:
 * Mailing list: [postgresql | lists](https://www.postgresql.org/list/)
 * Riportare un bug: [postgresql | bug-reporting](https://www.postgresql.org/docs/current/bug-reporting.html)
+
+# Estensioni oltre a quelle di base già installate:
+* [pgxn](https://pgxn.org/)
+* [github | extensions](https://github.com/search?q=postgresql+extensions&type=repositories)

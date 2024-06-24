@@ -114,3 +114,33 @@ FOR EACH STATEMENT
 EXECUTE PROCEDURE refresh_teachers_courses();
 ```
 ---
+# Esempio di creazione di un database per un utente
+* Entro come superuser postgres:
+    * `sudo -u postgres psql`
+* Creo un utente __admin__ come superuser. Se faccio solo un utente normale diventa poi complicato dargli tutti i permessi. 
+* Inoltre bisogna considerare che dovrà avere permessi anche sulle cose create in futuro. 
+* Con il __superuser__ ci risparmiamo un sacco di cose.
+    * `CREATE ROLE admin LOGIN PASSWORD 'buddy' SUPERUSER;`
+* Creo un database __doggie_spa__ e lo assegno all'utente __admin__.
+    * `CREATE DATABASE doggie_spa WITH TEMPLATE = template0 ENCODING = 'UTF8' LC_COLLATE = 'C.UTF-8' LC_CTYPE = 'C.UTF-8' OWNER admin;`
+* Mi collego al nuovo database:
+  * `\c doggie_spa`
+* Creo gli schema che mi interessano;
+    * `CREATE SCHEMA dogs;`
+    * `CREATE SCHEMA customers;`
+    * `CREATE SCHEMA extensions;` (Qui dentro verranno installate le eventuali estensioni del database)
+    * Lo schema `public` è di defaul; (In public ci vanno le tabelle condivise e le cose comuni)
+* Una volta fatto devo sistemare il file `pg_hba.conf` per l'accesso del nuovo utente al database.
+---
+# Estensioni
+* Molte sono installate di default sul server.
+* Sempre meglio comunque installare anche `postgresql-contrib`.
+* Per vedere tutte le estensioni installate sul server:
+  * `SELECT * FROM pg_available_extensions ORDER BY name`;
+  * Si vedono anche da DBeaver
+  * Quelle attualmenye installate: `SELECT * FROM pg_available_extensions where installed_version IS NOT NULL ORDER BY name;`
+* Vado sul DB che mi interessa e installo una estensione nello schema extensions.
+  * `create extension unaccent schema extensions;`
+* Le extension le posso usare da qualunque altro schema ma vanno opportunamente richiamate. Per esempio:
+  * `select * from doggie_spa.dogs.breeds where doggie_spa.extensions.unaccent(breed) = 'bulldog';`
+---
