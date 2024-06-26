@@ -142,5 +142,5 @@ EXECUTE PROCEDURE refresh_teachers_courses();
 * Vado sul DB che mi interessa e installo una estensione nello schema extensions.
   * `create extension unaccent schema extensions;`
 * Le extension le posso usare da qualunque altro schema ma vanno opportunamente richiamate. Per esempio:
-  * `select * from doggie_spa.dogs.breeds where doggie_spa.extensions.unaccent(breed) = 'bulldog';`
+  * `select * from doggie_spa.dogs.breeds where doggie_spa.extensions.unaccent(breed) = 'bulldogghino';`
 ---

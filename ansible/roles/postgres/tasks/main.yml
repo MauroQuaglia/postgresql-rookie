@@ -91,6 +91,14 @@
     mode: "0644"
   when: postgres_upload_csv
 
+- name: "Create tablespaces directory"
+  file:
+    path: "/home/vagrant/tablespaces"
+    state: "directory"
+    mode: 0700
+    owner: "postgres"
+    group: "postgres"
+
 - name: "Stop PostgresSQL"
   tags: "config"
   service:
