@@ -23,7 +23,7 @@ ALTER ROLE postgres WITH SUPERUSER INHERIT CREATEROLE CREATEDB LOGIN REPLICATION
 -- Tablespaces
 --
 
-CREATE TABLESPACE q_tablespace OWNER admin LOCATION '/home/vagrant/tablespaces';
+CREATE TABLESPACE mq7_tablespace OWNER admin LOCATION '/home/vagrant/tablespaces';
 
 
 \connect template1
@@ -131,12 +131,12 @@ CREATE EXTENSION IF NOT EXISTS unaccent WITH SCHEMA extensions;
 COMMENT ON EXTENSION unaccent IS 'text search dictionary that removes accents';
 
 
-SET default_tablespace = '';
+SET default_tablespace = mq7_tablespace;
 
 SET default_with_oids = false;
 
 --
--- Name: breeds; Type: TABLE; Schema: dogs; Owner: admin
+-- Name: breeds; Type: TABLE; Schema: dogs; Owner: admin; Tablespace: mq7_tablespace
 --
 
 CREATE TABLE dogs.breeds (

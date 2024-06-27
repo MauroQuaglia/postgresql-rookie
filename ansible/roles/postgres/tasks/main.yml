@@ -5,6 +5,13 @@
     name:
       - "gnupg2"
 
+- name: "Remove all PostgreSQL installation"
+  apt:
+    name: "postgresql-16"
+    state: absent
+    autoremove: true
+    purge: true
+
 - name: "Collect LC_CTYPE"
   shell: "locale | grep LC_CTYPE"
   register: lc_ctype
@@ -98,6 +105,15 @@
     mode: 0700
     owner: "postgres"
     group: "postgres"
+
+# Deve essere criptata la password altrimenti non funziona.
+# mkpasswd --method=sha-512
+# ciccio
+- name: "Change password for SO-user postgres"
+  user:
+    name: "postgres"
+    update_password: always
+    password: "$6$6c5JjNDJl4VPyVyS$FuFYEM/eg0BSZ48V2jvB4cQEDr6rJ/HqUgUwZcS91p6/8/c3XUR4ZuQMDDxAStVSdlfzidIGYdlytIDJXYCYV0"
 
 - name: "Stop PostgresSQL"
   tags: "config"

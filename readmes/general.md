@@ -88,4 +88,17 @@ scp -i /home/xpuser/mauro-quaglia/postgresql-rookie/ansible/.vagrant/machines/pg
 * SET ROLE messi; (divento messi)
 * `select session_user,current_user;` (postgres, messi)
 * Se poi voglio tornare indietro basta fare `RESET ROLE` e torno (postgres, postgres).
-  
+----
+# Utente postgres
+* Quando installo PostgreSQL vengno creati:
+* Un __utente del SO__ che si chiama `postgres`.
+  * `cat /etc/passwd | grep postgres` -> `postgres:x:107:114:PostgreSQL administrator,,,:/var/lib/postgresql:/bin/bash`
+  * Infatti se da utente `root` faccio `su - postgres`, mi autentifico come `postgres`.
+  * Per conoscere la sua password: `grep postgres /etc/shadow`... che è crittografata quindi la devo reimpostare:
+  * `sudo passwd postgres`
+  * Una volta fatto anche se sono utente `vagrant` poi posso fare `su - postgres`.
+  * Poi posso fare `psql`
+* Un __ruolo del database__ che si chiama `postgres`.
+  * E' un superuser.
+----
+* Per vedere tutti i postgres installati: `dpkg -l | grep postgres`
