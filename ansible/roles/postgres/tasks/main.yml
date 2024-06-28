@@ -5,13 +5,6 @@
     name:
       - "gnupg2"
 
-- name: "Remove all PostgreSQL installation"
-  apt:
-    name: "postgresql-16"
-    state: absent
-    autoremove: true
-    purge: true
-
 - name: "Collect LC_CTYPE"
   shell: "locale | grep LC_CTYPE"
   register: lc_ctype
@@ -46,7 +39,7 @@
     update_cache: true
     pkg:
       - "postgresql-{{ postgres_version }}"
-      - "postgresql-contrib"
+     # - "postgresql-contrib" Questo installa postgre 16 a causa di dipendenze. Non mettiamolo!
 
 - name: "Copy pg_hba.conf file"
   tags: "config"

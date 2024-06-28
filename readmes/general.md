@@ -100,5 +100,14 @@ scp -i /home/xpuser/mauro-quaglia/postgresql-rookie/ansible/.vagrant/machines/pg
   * Poi posso fare `psql`
 * Un __ruolo del database__ che si chiama `postgres`.
   * E' un superuser.
+* Esempio, una volta che sono loggato in vagrant:
+```
+postgres (NOME UTENTE DEL SO)@pg-vagrant:~$ psql
+  postgres (NOME DEL DATABASE A CUI SONO CONNESSO)=# select user;
+    user
+    ----------
+    postgres (RUOLO SUL DATABASE)
+    (1 row)
+```
 ----
 * Per vedere tutti i postgres installati: `dpkg -l | grep postgres`
