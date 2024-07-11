@@ -5,6 +5,7 @@
 * I fork: [postgresql | PostgreSQL_derived_databases](https://wiki.postgresql.org/wiki/PostgreSQL_derived_databases)
 * Download: [postgresql | download](https://www.postgresql.org/download/)
 * Tuning: [postgresql | Tuning_Your_PostgreSQL_Server](https://wiki.postgresql.org/wiki/Tuning_Your_PostgreSQL_Server)
+* Prompt psql: [postgresql | APP-PSQL-PROMPTING](https://www.postgresql.org/docs/current/app-psql.html#APP-PSQL-PROMPTING)
 
 # Funzionailità delle varie version
 * Feature Matrix: [postgresql | featurematrix](https://www.postgresql.org/about/featurematrix/)

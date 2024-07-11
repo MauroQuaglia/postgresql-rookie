@@ -81,6 +81,16 @@
     mode: "0640"
   when: postgres_custom_config
 
+- name: "Customize psql for user postgres"
+  tags: "config"
+  copy:
+    src: "customs/v{{ postgres_version }}/.psqlrc"
+    dest: "/var/lib/postgresql"
+    owner: "postgres"
+    group: "postgres"
+    mode: "0644"
+  when: postgres_custom_config
+
 - name: "Upload CSV file with data"
   tags: 'upload_csv'
   copy:
