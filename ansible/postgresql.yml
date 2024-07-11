@@ -12,4 +12,15 @@
         postgres_custom_config: true,
         postgres_upload_csv: true
     }
+
+# Questa cosa funziona, posso avere due istanze di PostgreSQL con versioni differenti sulla stessa macchina.
+# Devo però poi sistemare la porta di ascolto, non possono partire tutte e due sulla 5432.
+# Anche quando poi uso il psql, meglio specificare la versione che si vuole usare, es: /usr/lib/postgresql/10/bin/psql
+#    - { role: 'postgres',
+#        postgres_version: '11',
+#        postgres_lc_ctype: "C.UTF-8",
+#        postgres_lc_collate: "C.UTF-8",
+#        postgres_custom_config: false,
+#        postgres_upload_csv: false
+#    }
 ...
