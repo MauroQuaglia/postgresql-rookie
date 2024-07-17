@@ -1,2 +1,0 @@
-* Fare un tags config decente con handler per ansible-
-* Studiarsi un po' dbeaver
