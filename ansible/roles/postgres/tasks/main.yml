@@ -4,6 +4,7 @@
     update_cache: true
     name:
       - "gnupg2"
+      - "libpq-dev" # Serve per compilare la libreria libpq che poi serve per i pg_cron
 
 - name: "Collect LC_CTYPE"
   shell: "locale | grep LC_CTYPE"
@@ -39,7 +40,8 @@
     update_cache: true
     pkg:
       - "postgresql-{{ postgres_version }}"
-     # - "postgresql-contrib" Questo installa postgre 16 a causa di dipendenze. Non mettiamolo!
+      - "postgresql-{{ postgres_version }}-cron"
+     # - "postgresql-contrib" Questo installa postgre 16 a causa di dipendenze. Non mettiamolo! # Controllare con: dpkg -l | grep postgres
 
 - name: "Copy pg_hba.conf file"
   tags: "config"
