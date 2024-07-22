@@ -6,6 +6,7 @@
 * Download: [postgresql | download](https://www.postgresql.org/download/)
 * Tuning: [postgresql | Tuning_Your_PostgreSQL_Server](https://wiki.postgresql.org/wiki/Tuning_Your_PostgreSQL_Server)
 * Prompt psql: [postgresql | APP-PSQL-PROMPTING](https://www.postgresql.org/docs/current/app-psql.html#APP-PSQL-PROMPTING)
+* Sito che sembra interessante [postgresqltutorial](https://www.postgresqltutorial.com/)
 
 # Funzionailità delle varie version
 * Feature Matrix: [postgresql | featurematrix](https://www.postgresql.org/about/featurematrix/)
@@ -22,3 +23,8 @@
 # Estensioni oltre a quelle di base già installate:
 * [pgxn](https://pgxn.org/)
 * [github | extensions](https://github.com/search?q=postgresql+extensions&type=repositories)
+
+# Esempi di funzioni per la versione v10
+* [functions-string](https://www.postgresql.org/docs/10/functions-string.html)
+* [functions](https://www.postgresql.org/docs/10/functions.html)
+* [docs/10/](https://www.postgresql.org/docs/10/)
