@@ -34,6 +34,7 @@ select unnest(string_to_array('abc.123.def', '.')) as result;
 
 -- esempio
 select substring('GTAT' from i for 1) from generate_series(1, length('GTAT'), 1) as i;
+
 select regexp_replace(regexp_replace('GTAT', 'T', 'X', 'g'), 'G', 'H', 'g')
 
 
