@@ -35,3 +35,13 @@ select unnest(string_to_array('abc.123.def', '.')) as result;
 -- esempio
 select substring('GTAT' from i for 1) from generate_series(1, length('GTAT'), 1) as i;
 select regexp_replace(regexp_replace('GTAT', 'T', 'X', 'g'), 'G', 'H', 'g')
+
+
+
+
+
+--esempio di quey sql complicata
+select merchant_name,
+       (merchant_name || ' ' ||username) as meruser,
+       date_part('day', (review_date_insert - NOW())) as days_ago
+from merchant_reviews mr order by days_ago;
