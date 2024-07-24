@@ -8,6 +8,9 @@
 * Prompt psql: [postgresql | APP-PSQL-PROMPTING](https://www.postgresql.org/docs/current/app-psql.html#APP-PSQL-PROMPTING)
 * Sito che sembra interessante [postgresqltutorial](https://www.postgresqltutorial.com/)
 
+# Linguaggi v10:
+* [plpgsql](https://www.postgresql.org/docs/10/plpgsql.html)
+
 # Funzionailità delle varie version
 * Feature Matrix: [postgresql | featurematrix](https://www.postgresql.org/about/featurematrix/)
 * EOL support: [postgresql | versioning](https://www.postgresql.org/support/versioning/)
