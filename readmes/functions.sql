@@ -3,6 +3,8 @@ select * from pg_catalog.generate_series(1, 51, 13) as x;
 -- Dovrebbe fare la lista di tutte le funzioni disponibili.
 select proname from pg_catalog.pg_proc order by proname;
 
+-- array
+SELECT arr[2:4] FROM (SELECT ARRAY[1, 2, 3, 4, 5, 6] AS arr) AS subquery;
 
 
 -- https://www.postgresql.org/docs/10/functions-string.html
@@ -102,4 +104,39 @@ UPDATE public.merchant_reviews
 SET review_title = 'Juan'
 WHERE review_title = 'review 22';
 
-WIP https://www.w3schools.com/sql/sql_aggregate_functions.asp
+
+-- Range
+
+SELECT '[1979-01-07,1988-05-19]'::daterange;
+-- Viene canonicizzato: [1979-01-07,1988-05-20)
+
+SELECT '(0,)'::int8range;
+-- Diventa [1,)
+
+-- Con il costruttore
+SELECT daterange('1979-01-07','1988-05-19', '[]');
+
+-- Verificare che la data sia in un range.
+SELECT '[1979-01-07,2030-05-19]'::daterange @> CURRENT_DATE AS b;
+
+-- esempio di creazione di una tabella con un campo JSONe dei dati
+CREATE TABLE persons(id serial PRIMARY KEY, person json);
+INSERT INTO persons (person) VALUES ('{
+  "friends": [
+    {
+      "name": "Ciro",
+      "age": 31,
+      "email": "alice@example.com"
+    },
+    {
+      "name": "Bob",
+      "age": 25,
+      "email": "bob@example.com"
+    }
+  ]
+}
+');
+
+SELECT person -> 'friends' AS friends FROM persons;
+SELECT person -> 'friends' -> 0 ->> 'name' AS name FROM persons;
+SELECT json_array_elements(person -> 'friends') ->> 'name' AS name FROM persons;
