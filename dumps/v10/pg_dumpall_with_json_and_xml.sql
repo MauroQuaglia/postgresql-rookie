@@ -100,6 +100,40 @@ CREATE TABLE public.persons (
 ALTER TABLE public.persons OWNER TO postgres;
 
 --
+-- Name: persons_b; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.persons_b (
+    id integer NOT NULL,
+    person jsonb
+);
+
+
+ALTER TABLE public.persons_b OWNER TO postgres;
+
+--
+-- Name: persons_b_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.persons_b_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.persons_b_id_seq OWNER TO postgres;
+
+--
+-- Name: persons_b_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.persons_b_id_seq OWNED BY public.persons_b.id;
+
+
+--
 -- Name: persons_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -122,10 +156,58 @@ ALTER SEQUENCE public.persons_id_seq OWNED BY public.persons.id;
 
 
 --
+-- Name: persons_xml; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.persons_xml (
+    id integer NOT NULL,
+    person xml
+);
+
+
+ALTER TABLE public.persons_xml OWNER TO postgres;
+
+--
+-- Name: persons_xml_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.persons_xml_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.persons_xml_id_seq OWNER TO postgres;
+
+--
+-- Name: persons_xml_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.persons_xml_id_seq OWNED BY public.persons_xml.id;
+
+
+--
 -- Name: persons id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.persons ALTER COLUMN id SET DEFAULT nextval('public.persons_id_seq'::regclass);
+
+
+--
+-- Name: persons_b id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.persons_b ALTER COLUMN id SET DEFAULT nextval('public.persons_b_id_seq'::regclass);
+
+
+--
+-- Name: persons_xml id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.persons_xml ALTER COLUMN id SET DEFAULT nextval('public.persons_xml_id_seq'::regclass);
 
 
 --
@@ -140,10 +222,50 @@ COPY public.persons (id, person) FROM stdin;
 
 
 --
+-- Data for Name: persons_b; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.persons_b (id, person) FROM stdin;
+1	{"address": "Via le Mani", "friends": [{"age": 31, "name": "Ciro", "email": "alice@example.com"}, {"age": 25, "name": "Bob", "email": "bob@example.com"}]}
+\.
+
+
+--
+-- Data for Name: persons_xml; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.persons_xml (id, person) FROM stdin;
+1	<library>\n    <book id="bk101">\n        <author>Gambardella, Matthew</author>\n        <title>XML Developer Guide</title>\n        <genre>Computer</genre>\n        <price>44.95</price>\n        <publish_date>2000-10-01</publish_date>\n        <description>An in-depth look at creating applications \n        with XML.</description>\n    </book>\n    <book id="bk102">\n        <author>Ralls, Kim</author>\n        <title>Midnight Rain</title>\n        <genre>Fantasy</genre>\n        <price>5.95</price>\n        <publish_date>2000-12-16</publish_date>\n        <description>A former architect battles corporate zombies, \n        an evil sorceress, and her own childhood to become queen \n        of the world.</description>\n    </book>\n    <book id="bk103">\n        <author>Corets, Eva</author>\n        <title>Maeve Ascendant</title>\n        <genre>Fantasy</genre>\n        <price>5.95</price>\n        <publish_date>2000-11-17</publish_date>\n        <description>After the collapse of a nanotechnology \n        society in England, the young survivors lay the \n        foundation for a new society.</description>\n    </book>\n</library>\n
+\.
+
+
+--
+-- Name: persons_b_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.persons_b_id_seq', 1, true);
+
+
+--
 -- Name: persons_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.persons_id_seq', 8, true);
+
+
+--
+-- Name: persons_xml_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.persons_xml_id_seq', 1, true);
+
+
+--
+-- Name: persons_b persons_b_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.persons_b
+    ADD CONSTRAINT persons_b_pkey PRIMARY KEY (id);
 
 
 --
@@ -152,6 +274,14 @@ SELECT pg_catalog.setval('public.persons_id_seq', 8, true);
 
 ALTER TABLE ONLY public.persons
     ADD CONSTRAINT persons_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: persons_xml persons_xml_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.persons_xml
+    ADD CONSTRAINT persons_xml_pkey PRIMARY KEY (id);
 
 
 --

@@ -136,7 +136,107 @@ INSERT INTO persons (person) VALUES ('{
   ]
 }
 ');
-
 SELECT person -> 'friends' AS friends FROM persons;
 SELECT person -> 'friends' -> 0 ->> 'name' AS name FROM persons;
 SELECT json_array_elements(person -> 'friends') ->> 'name' AS name FROM persons;
+
+-- JSONB
+CREATE TABLE public.persons_b (
+    id serial4 NOT NULL,
+    person jsonb NULL,
+    CONSTRAINT persons_b_pkey PRIMARY KEY (id)
+);
+INSERT INTO persons_b (person) VALUES ('{
+  "friends": [
+    {
+      "name": "Ciro",
+      "age": 31,
+      "email": "alice@example.com"
+    },
+    {
+      "name": "Bob",
+      "age": 25,
+      "email": "bob@example.com"
+    }
+  ]
+}
+');
+
+SELECT person -> 'friends' -> 0 ->> 'name' AS name FROM persons;
+
+CREATE TABLE public.persons_b (
+                                  id serial4 NOT NULL,
+                                  person jsonb NULL,
+                                  CONSTRAINT persons_b_pkey PRIMARY KEY (id)
+);
+INSERT INTO persons_b (person) VALUES ('{
+  "friends": [
+    {
+      "name": "Ciro",
+      "age": 31,
+      "email": "alice@example.com"
+    },
+    {
+      "name": "Bob",
+      "age": 25,
+      "email": "bob@example.com"
+    }
+  ]
+}
+');
+
+SELECT person AS j FROM persons p WHERE id = 6;
+SELECT person AS jb FROM persons_b WHERE id = 1;
+
+
+
+UPDATE persons_b SET person = person || '{"address": "Via le Mani"}'::jsonb RETURNING person;
+
+
+
+CREATE TABLE public.persons_xml (
+                                    id serial4 NOT NULL,
+                                    person xml NULL,
+                                    CONSTRAINT persons_xml_pkey PRIMARY KEY (id)
+);
+INSERT INTO public.persons_xml(person) VALUES('<?xml version="1.0" encoding="UTF-8"?>
+<library>
+  <book id="bk101">
+    <author>Gambardella, Matthew</author>
+    <title>XML Developer Guide</title>
+    <genre>Computer</genre>
+    <price>44.95</price>
+    <publish_date>2000-10-01</publish_date>
+    <description>An in-depth look at creating applications
+      with XML.</description>
+  </book>
+  <book id="bk102">
+    <author>Ralls, Kim</author>
+    <title>Midnight Rain</title>
+    <genre>Fantasy</genre>
+    <price>5.95</price>
+    <publish_date>2000-12-16</publish_date>
+    <description>A former architect battles corporate zombies,
+      an evil sorceress, and her own childhood to become queen
+      of the world.</description>
+  </book>
+  <book id="bk103">
+    <author>Corets, Eva</author>
+    <title>Maeve Ascendant</title>
+    <genre>Fantasy</genre>
+    <price>5.95</price>
+    <publish_date>2000-11-17</publish_date>
+    <description>After the collapse of a nanotechnology
+      society in England, the young survivors lay the
+      foundation for a new society.</description>
+  </book>
+</library>
+');
+
+SELECT
+    person,
+    xpath('/library/book/author/text()', person)::text AS author
+FROM
+    public.persons_xml;
+
+
