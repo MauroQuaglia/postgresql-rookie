@@ -22,3 +22,22 @@ WHERE fts_text @@ ts
 ORDER BY RANK DESC ;
 
 Bisognerebbe poi creare un trigger di modo che tutte le volte che un testo row viene aggiornato il campo fts_vector venga re-indicizato.
+
+Da chatGPT:
+Puoi utilizzare il Full Text Search (FTS) di PostgreSQL al posto di Solr per molte esigenze di ricerca full-text. 
+
+PostgreSQL offre una potente funzionalità di ricerca full-text integrata, 
+che è in grado di soddisfare molteplici requisiti di ricerca per applicazioni di piccole e medie dimensioni.
+Tuttavia, ci sono alcune considerazioni da fare riguardo ai vantaggi e alle limitazioni di entrambe le soluzioni.
+
+Vantaggi dell'uso di PostgreSQL FTS
+Integrazione: Essendo integrato direttamente nel database, non c'è bisogno di configurare e mantenere un sistema separato come Solr.
+Consistenza dei Dati: Le ricerche full-text in PostgreSQL sono sempre coerenti con i dati più recenti, senza necessità di sincronizzazioni tra database e un motore di ricerca esterno.
+Semplicità: Configurare e utilizzare la ricerca full-text in PostgreSQL può essere più semplice rispetto a configurare un server Solr.
+Performance Accettabile: Per molte applicazioni di piccole e medie dimensioni, le prestazioni della ricerca full-text di PostgreSQL sono sufficienti.
+Costo: Può essere più economico non dover mantenere un'infrastruttura separata per il motore di ricerca.
+
+Limitazioni di PostgreSQL FTS
+Scalabilità: Per applicazioni molto grandi o con elevate esigenze di ricerca, Solr (o Elasticsearch) può offrire una scalabilità migliore.
+Funzionalità Avanzate: Solr offre molte funzionalità avanzate come il clustering, il faceting, le ricerche distribuite, ecc., che possono non essere così potenti o semplici da implementare in PostgreSQL.
+Ottimizzazioni di Ricerca: Solr è progettato specificamente per la ricerca full-text e può gestire query complesse e ad alto volume più efficientemente rispetto a PostgreSQL.
