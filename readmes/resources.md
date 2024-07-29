@@ -31,3 +31,6 @@
 * [functions-string](https://www.postgresql.org/docs/10/functions-string.html)
 * [functions](https://www.postgresql.org/docs/10/functions.html)
 * [docs/10/](https://www.postgresql.org/docs/10/)
+
+# Debian
+* https://packages.debian.org/search?suite=bullseye&arch=amd64&searchon=names&keywords=postgresql

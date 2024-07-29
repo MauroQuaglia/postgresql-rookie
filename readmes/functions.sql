@@ -5,6 +5,7 @@ select proname from pg_catalog.pg_proc order by proname;
 
 -- array
 SELECT arr[2:4] FROM (SELECT ARRAY[1, 2, 3, 4, 5, 6] AS arr) AS subquery;
+SELECT ('{1,2,3}'::integer[])[3];
 
 
 -- https://www.postgresql.org/docs/10/functions-string.html
