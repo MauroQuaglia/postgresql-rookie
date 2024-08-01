@@ -1,3 +1,15 @@
+# Creare una tabella
+```
+CREATE TABLE table_name (
+column1 datatype constraint,
+column2 datatype constraint,
+column3 datatype constraint,
+....
+);
+https://www.w3schools.com/sql/sql_constraints.asp
+```
+
+
 # Inserimento di un po' di dati iniziali:
 * `sudo -u postgres psql`
 * `\l`

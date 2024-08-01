@@ -1,0 +1,1 @@
+* https://kinsta.com/it/blog/replica-postgresql/#:~:text=La%20replica%20PostgreSQL%20%C3%A8%20definita,come%20server%20%E2%80%9Cdi%20replica%E2%80%9D.
