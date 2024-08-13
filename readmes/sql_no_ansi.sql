@@ -65,3 +65,48 @@ SELECT * FROM (
 -- ANY è uno standard.
 -- Esempio pratico: SELECT * FROM public.merchant_reviews WHERE merchant_name ILIKE ANY(ARRAY['%_pm%', '%poce']);
 
+------------------
+
+-- Bello lo using... comodo, la query giusto per vedere se funziona.
+DELETE FROM merchant_reviews mr
+USING merchant_reviews_subratings AS mrs
+WHERE mr.review_global_rating = mrs.rating_value AND mrs.rating_value = 5;
+
+
+-- E anche il RETURNING è comodo.
+DELETE FROM merchant_reviews WHERE id_review = 1;
+DELETE FROM merchant_reviews WHERE id_review = 2 RETURNING *;
+DELETE FROM merchant_reviews WHERE id_review = 4 RETURNING username;
+
+
+----------------
+-- Insert or nothing
+INSERT INTO public.aggregated_fpns (id, puid, fpn, created_at, updated_at) VALUES(10, 'a', 'b', NOW(), NOW()) ON CONFLICT DO NOTHING;
+
+-- Insert or update (UPSERT)
+INSERT INTO public.aggregated_fpns (id, puid, fpn, created_at, updated_at) VALUES(10, 'a', 'b', NOW(), NOW())
+    ON CONFLICT(id) DO UPDATE
+        SET puid = ECLUDED.puid;
+
+----------------------------------
+--escape
+SELECT 'It''s time o go!';
+-- SELECT $$It's time o go!$$;
+
+----------------------------------------------
+-- FILTER
+SELECT
+    AVG(review_global_rating) FILTER (WHERE merchant_name = 'x') AS x,
+    AVG(review_global_rating) FILTER (WHERE merchant_name = 'y') AS y
+FROM merchant_reviews;
+
+--------------------
+-- la parte delle query "window" è interessante ma da approfondire
+SELECT merchant_name, review_global_rating, AVG(review_global_rating) OVER()
+FROM merchant_reviews;
+
+SELECT AVG(review_global_rating) FROM merchant_reviews mr WHERE merchant_name = 'x';
+
+SELECT merchant_name, review_global_rating, AVG(review_global_rating) OVER(PARTITION BY merchant_name = 'x')
+FROM merchant_reviews;
+
