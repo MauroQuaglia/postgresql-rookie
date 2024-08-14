@@ -109,4 +109,24 @@ SELECT AVG(review_global_rating) FROM merchant_reviews mr WHERE merchant_name = 
 
 SELECT merchant_name, review_global_rating, AVG(review_global_rating) OVER(PARTITION BY merchant_name = 'x')
 FROM merchant_reviews;
+--------------------------------------------
+
+--CTE
+WITH cte_apm AS (
+    SELECT * FROM merchant_reviews WHERE merchant_name = 'apm'
+)
+SELECT AVG(review_global_rating) FROM cte_apm;
+
+
+--Le CTE si possono fare anche per spostare i dati.
+--da capire se sono in transazione in automatico.
+--la query che segue funziona ma giusto per capire come si fanno queste cose.
+WITH del AS (
+DELETE FROM merchant_reviews WHERE id_review BETWEEN 1 AND 50 RETURNING *
+)
+INSERT INTO merchant_reviews SELECT * FROM del WHERE id_review = 30;
+
+--------------------
+--ordinality
+select * from pg_catalog.generate_series(1, 51, 13) WITH ORDINALITY;
 
