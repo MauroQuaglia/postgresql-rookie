@@ -21,3 +21,6 @@ Dovrebbero essere utilizzate con cautela e solo in situazioni in cui la persiste
 [postgresql | Tuning_Your_PostgreSQL_Server](https://wiki.postgresql.org/wiki/Tuning_Your_PostgreSQL_Server)
 
 * Per analisi performance c'è una estensione: pg_stat_statements
+* Come sql:
+ * `VACUUM FULL;`
+ * `VACUUM ANALYZE;`

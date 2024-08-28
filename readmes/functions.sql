@@ -241,3 +241,16 @@ FROM
     public.persons_xml;
 
 
+---------------
+-- custom
+CREATE OR REPLACE FUNCTION mq7(name text) RETURNS text AS
+$$
+BEGIN
+RETURN CONCAT(name, ' MQ7');
+END;
+$$
+LANGUAGE plpgsql;
+
+SELECT mq7('ciao');
+
+---------------------------------
