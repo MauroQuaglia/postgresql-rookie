@@ -23,7 +23,6 @@
 vagrant ssh
 sudo cp /etc/postgresql/10/main/pg_hba.conf /home/vagrant
 sudo chown vagrant:vagrant /home/vagrant/pg_hba.conf
-scp -i /home/xpuser/mauro-quaglia/postgresql-rookie/ansible/.vagrant/machines/pg-vagrant/virtualbox/private_key -P 2222 vagrant@localhost:/home/vagrant/pg_hba.conf .
 ```
 ----
 # Client:
