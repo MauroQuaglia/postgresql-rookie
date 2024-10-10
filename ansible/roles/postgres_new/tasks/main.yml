@@ -1,0 +1,52 @@
+---
+- name: "Install required packages"
+  apt:
+    update_cache: true
+    name:
+      - "gnupg2"
+      - "python3-psycopg2"
+
+- name: "Install apt key"
+  apt_key:
+    url: "https://www.postgresql.org/media/keys/ACCC4CF8.asc"
+
+- name: "Add apt repository"
+  apt_repository:
+    repo: "deb https://apt.postgresql.org/pub/repos/apt/ {{ansible_distribution_release}}-pgdg main"
+    filename: 'pgdg'
+
+- name: "Install PostgreSQL"
+  apt:
+    update_cache: true
+    pkg:
+      - "postgresql-{{ postgres_version }}"
+
+- name: "Generate pg_hba.conf file"
+  tags: "config"
+  template:
+    src: "pg_hba.conf.j2"
+    dest: "/etc/postgresql/{{ postgres_version }}/main/pg_hba.conf"
+    owner: "postgres"
+    group: "postgres"
+    mode: "0640"
+  notify: "Restart PostgresSQL"
+
+- name: "Copy postgresql.auto.conf file"
+  tags: "config"
+  copy:
+    src: "{{ postgres_autoconf_src_path | default() }}postgresql.auto.conf"
+    dest: "/var/lib/postgresql/{{ postgres_version }}/main"
+    owner: "postgres"
+    group: "postgres"
+    mode: "0600"
+  notify: "Restart PostgresSQL"
+
+- name: "Create roles"
+  become: true
+  become_user: "postgres"
+  postgresql_user:
+    name: "{{ item.user }}"
+    role_attr_flags: "{{ item.roles }}"
+    password: "{{ item.password }}"
+  loop: "{{ postgres_roles }}"
+...

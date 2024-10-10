@@ -1,0 +1,7 @@
+# TYPE  DATABASE        USER            ADDRESS                 METHOD
+local   all             postgres                                peer
+local   all             {{ postgres_authentications_local }}    peer
+
+{% for auth in postgres_authentications_host %}
+host    all             {{ auth.user }} {{ auth.address }}      scram-sha-256
+{% endfor %}

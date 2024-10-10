@@ -1,0 +1,9 @@
+---
+postgres_version: "15"
+postgres_authentications_local: "mauro"
+postgres_authentications_host:
+  - { user: "mauro", address: "127.0.0.1/32", notes: "localhost" }
+postgres_roles:
+  - { user: "mauro", roles: "SUPERUSER", password: "changeme" }
+postgres_autoconf_src_path: ""
+...
