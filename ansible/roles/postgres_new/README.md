@@ -19,3 +19,7 @@
       # Altrimenti posso passare un file pesonalizzato. 
       postgres_autoconf_src_path: "{{ project_dir }}/ansible/files/"
 ```
+
+# Nota sulla connessione peer
+* Se ho: `local   all   mauro   peer`
+* Significa che se sono l'utente `mauro` e sono sulla macchina, allora posso collegarmi al database: `psql -d postgres`.
