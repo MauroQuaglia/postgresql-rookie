@@ -29,3 +29,12 @@
 /usr/lib/postgresql/15/bin/pg_restore -U mquser -h localhost -p 31124 -C -d postgres --no-owner /path/database-dumps/nome_database.tar
 ```
 * In questo caso ho usato un utente `mquser` e il flag `--no-owner` che significa che se non trova tra i ruoli l'`owner` di una tabella, gli assegna di default `mquser`.
+
+* __Tuning__:
+  * Per la sole fase di restore posso aumentare molto il `max_wal_size`. Per esempio con 8 GB di RAM possiamo metterlo a 6 GB e dopo che il restore è finito portarlo a 2 GB.
+  * Sia la fase di __dump__ che quella di __restore__ può essere parallelizzata utilizzando più CPU:
+    * `--jobs 4` se ho a disposizione 4 CPU.
+    * Questo tipo di dump richiede che il formato del dump sia di tipo __directory__
+    * Esempio: 
+      * `/usr/lib/postgresql/15/bin/pg_dump -U postgres -h localhost -p 31123 --dbname=nome_database --format=d --jobs 4 --file=/path/database-dumps/nome_database.tar`
+      * `/usr/lib/postgresql/15/bin/pg_restore -U mquser -h localhost -p 31124 -C -d postgres --no-owner --jobs 4 /path/database-dumps/nome_database.tar` 
