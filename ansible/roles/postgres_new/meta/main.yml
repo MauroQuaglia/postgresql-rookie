@@ -1,0 +1,8 @@
+---
+galaxy_info:
+  role_name: postgres
+  author: Mauro Quaglia
+  min_ansible_version: 2.10.8
+  license: GPL
+  description: PostgreSQL setup
+...
